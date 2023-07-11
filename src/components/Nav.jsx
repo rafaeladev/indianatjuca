@@ -1,15 +1,30 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 import ChangeLanguage from './ChangeLanguage.jsx';
 import { useContext } from 'react';
 import { LngContext } from '../utils/context.jsx';
+import Logo from '/fav.png';
 
 const Nav = () => {
     const { language } = useContext(LngContext);
+
     return (
         <nav className='nav'>
+            <div className='nav__logo'>
+                <Link to='/'>
+                    <img
+                        className='nav__img'
+                        src={Logo}
+                        alt='logo'
+                    />
+                </Link>
+
+                <Link to='/'>
+                    <p>Natal Indiana Tijuca</p>
+                </Link>
+            </div>
             <ul className='nav__link'>
                 <NavLink
                     to='/'

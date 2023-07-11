@@ -2,12 +2,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: $color-salmon;
     align-items: center;
+    background-color: $color-white;
 }
 .photoCardList {
     display: flex;
-    background-color: $color-salmon;
     justify-content: space-between;
     padding: 40px $layout-padding;
 }
@@ -15,12 +14,10 @@
 .homeContent {
     &__text {
         align-items: center;
-        border: 1px solid $color-salmon;
 
         display: flex;
         & p {
             padding: 20px;
-            background-color: $color-salmon;
         }
         & img {
             height: 99px;
@@ -28,7 +25,6 @@
         }
     }
     &__actions {
-        background-color: $color-salmon;
         display: grid;
         grid-template-columns: $layout-padding 1fr 0.5fr 0.5fr 0.5fr $layout-padding;
         grid-template-rows: 1fr 1fr;

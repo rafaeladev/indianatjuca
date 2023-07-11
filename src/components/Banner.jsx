@@ -8,7 +8,7 @@ const Banner = (props) => {
         backgroundImage: `url(${props.img})`,
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
-        height: '500px',
+        height: '440px',
         width: '100%',
         gridColumn: '1 / -1',
     };
@@ -19,20 +19,27 @@ const Banner = (props) => {
         backgroundImage: `url(${props.img})`,
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
-        height: '330px',
-        width: '100%',
-        maxWidth: '1500px',
+        height: '440px',
+        width: '880px',
         gridColumn: '1 / -1',
-        backgroundColor: '#000000',
+        backgroundColor: '#c2c2cc',
+    };
+    const banner = {
+        width: '100%',
+        backgroundColor: '#c2c2cc',
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '40px',
+        marginTop: '90px',
     };
     let classStyle = styleBanner;
     if (props.page === 'home') {
         classStyle = homeBanner;
     }
     return (
-        <>
+        <div style={banner}>
             <div style={classStyle}></div>
-        </>
+        </div>
     );
 };
 

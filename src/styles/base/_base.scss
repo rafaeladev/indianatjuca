@@ -32,9 +32,9 @@ a {
     text-decoration: none;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 a:hover {
-    font-weight: bold;
     & img {
         transform: scale(1.1);
         transition-duration: 0.5s;
@@ -48,13 +48,8 @@ button {
     border: none;
     color: $color-salmon;
 }
-
-nav {
-    background-color: $color-salmon;
-}
-
 header {
-    background-color: $color-salmon;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
 }
@@ -67,16 +62,13 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //background-color: $color-salmon;
-    //position: relative;
-    // top: 20%;
-    //position: absolute;
 }
 
 section {
     max-width: 1440px;
     width: 100%;
     padding-inline: $layout-padding;
+    background-color: $color-white;
 }
 
 footer {
@@ -93,10 +85,16 @@ footer {
 
 .site-wrapper {
     min-height: 100vh;
+    max-width: 1440px;
     margin-block: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    margin: auto;
+    align-items: center;
+    background-color: $color-white;
+}
+#root {
+    background-color: $color-gray;
 }
 
 select {

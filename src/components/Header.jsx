@@ -1,22 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import Logo from '/fav.png';
 import Nav from './Nav.jsx';
 
 const Header = () => {
+    const headerRef = useRef();
+    // Nav scroll color change
+    let scrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+        scrollY = window.scrollY;
+        if (scrollY > 60) {
+            headerRef.current.classList.add('header--color-change');
+        } else {
+            headerRef.current.classList.remove('header--color-change');
+        }
+    });
     return (
-        <header className='header'>
-            <div>
-                <Link to='/'>
-                    <img
-                        className='nav__img'
-                        src={Logo}
-                        alt='logo'
-                    />
-                </Link>
-
-                <p>Natal Indiana Tijuca</p>
-            </div>
+        <header
+            className='header'
+            ref={headerRef}
+        >
             <Nav />
         </header>
     );

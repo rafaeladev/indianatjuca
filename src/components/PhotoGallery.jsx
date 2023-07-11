@@ -11,8 +11,8 @@ const PhotoGallery = (props) => {
                 className={`photoGallery__horizontal`}
             >
                 <img
-                    src={`natal/natal${props.year}/${photo.name}.webp`}
-                    alt={`test`}
+                    src={`natal/natal${props.year}/${photo.name}.${props.format}`}
+                    alt={`${photo.id}`}
                     className='galleryImg'
                 />
             </Link>
