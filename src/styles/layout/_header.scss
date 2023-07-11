@@ -1,0 +1,20 @@
+.header {
+    // position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+    padding: 10px 30px;
+    & img {
+        width: 30px;
+    }
+    & p {
+        align-self: center;
+        font-size: 20px;
+        padding-inline: 10px;
+    }
+}
+
+header > :nth-child(1) {
+    display: flex;
+}

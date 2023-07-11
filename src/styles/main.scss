@@ -1,0 +1,24 @@
+/*Import utils CSS*/
+@import './utils/variables';
+@import './utils/maps';
+@import './utils/mixins';
+
+/*Import bases CSS*/
+@import './base/base';
+@import './base/typography';
+
+/*Import layout CSS*/
+@import './layout/nav';
+@import './layout/header';
+@import './layout/footer';
+@import './layout/photoGallery';
+
+/*Import pages CSS*/
+@import './pages/home';
+@import './pages/infos';
+@import './pages/archives';
+
+/*Import components CSS*/
+@import './components/animations';
+@import './components/loader';
+@import './components/button';

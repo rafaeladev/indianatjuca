@@ -1,0 +1,44 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__link {
+        display: flex;
+        gap: 50px;
+        margin-left: auto;
+        &__item {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: $color-gray;
+                height: 2px;
+                width: 0%;
+                bottom: 0;
+                left: 0;
+                transition: all 0.5s ease-in;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+        }
+        & ul {
+            margin-left: auto;
+        }
+        &__active::after {
+            width: 100%;
+        }
+    }
+    & button {
+        background-color: $color-salmon;
+    }
+    &__lang {
+        margin-left: 40px;
+    }
+}
+
+.selectBox {
+    background-color: $color-salmon;
+    border: none;
+    font-size: 1rem;
+}
