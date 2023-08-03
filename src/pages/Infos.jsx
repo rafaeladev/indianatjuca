@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { LngContext } from '../utils/context.jsx';
 
 import hommebanner from '/back2.png';
@@ -19,13 +19,28 @@ const About = () => {
     const { section1, section2, section3, section4 } = aboutData.find(
         (data) => data.title === language
     );
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    });
+
     return (
         <>
             <Banner img={hommebanner} />
             <h1 className='title'>Infos</h1>
             <section className='infos'>
                 <div className='infos__content'>
-                    <div>
+                    <div className='hidden'>
                         <h2>{section1.subtitle}</h2>
                         <p>{section1.content}</p>
                     </div>
@@ -33,37 +48,39 @@ const About = () => {
                         <img
                             src={profilepic}
                             alt='Maria do Socorro'
+                            className='hidden'
                         />
                         <span>Maria do Socorro</span>
                     </div>
                 </div>
-                <div className='infos__content'>
+                <div className='infos__content logo'>
                     <img
-                        className='infos__content__logo'
+                        className='infos__content__logo logo hidden'
                         src={pic1}
                         alt='logo'
                     />
                     <img
-                        className='infos__content__img'
+                        className='infos__content__img logo hidden'
                         src={pic2}
                         alt='maria'
                     />
                     <img
-                        className='infos__content__img'
+                        className='infos__content__img logo hidden'
                         src={pic3}
                         alt='associacao'
                     />
                 </div>
             </section>
             <section className='infos'>
-                <h2>{section2.subtitle}</h2>
-                <p>{section2.content}</p>
+                <h2 className='hidden'>{section2.subtitle}</h2>
+                <p className='hidden'>{section2.content}</p>
             </section>
-            <section className='infos'>
-                <h2>{section3.subtitle}</h2>
-                <p>{section3.content}</p>
+            <section className='infos hidden'>
+                <h2 className='hidden'>{section3.subtitle}</h2>
+                <p className='hidden'>{section3.content}</p>
                 <div className='infosImgFlex'>
                     <img
+                        className='hidden'
                         src={pic4}
                         alt='favela maps'
                     />
@@ -97,7 +114,7 @@ const About = () => {
                 </div>
             </section>
             <section className='infos'>
-                <h2>{section4.subtitle}</h2>
+                <h2 className='hidden'>{section4.subtitle}</h2>
             </section>
         </>
     );

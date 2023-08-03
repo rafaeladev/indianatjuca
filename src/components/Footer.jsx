@@ -1,15 +1,24 @@
 import React from 'react';
-import footerImg from '/footerimg.jfif';
+import footerImg from '/footerImg.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='footer'>
             <img
                 src={footerImg}
                 alt='footer logo'
             />
-            <h2>Natal das crianças da comunidade Indiana Tijuca</h2>
-            <span>site feito pela Associação de Moradores da Indiana Tijuca © 2022</span>
+            <div className='footer__text'>
+                Indiana Tijuca by{' '}
+                <Link
+                    to='/'
+                    className='footer--link'
+                >
+                    Rafaela Oliveira
+                </Link>{' '}
+                @ 2023
+            </div>
         </footer>
     );
 };

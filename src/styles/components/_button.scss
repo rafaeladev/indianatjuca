@@ -17,19 +17,30 @@
 
 .buttonNow {
     background-color: $color-piment;
-    border-radius: 5px;
-    border: 1px solid $color-piment;
+    border-radius: 0px;
     color: $color-white;
-    padding: 5px 25px;
-    margin-inline: 10px;
-    margin-block: 30px;
+    padding: 20px 40px;
+    // margin-inline: 10px;
+    // margin-block: 30px;
     transition: all 0.5s ease;
     width: 100%;
-    scale: (1);
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    &::after {
+        content: '';
+        background-color: $color-green;
+        width: 110%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        transform: translateX(-200%);
+        transition: all 200ms ease-out;
+        z-index: -1;
+    }
     &:hover {
-        background-color: $color-white;
-        scale: 1.1;
-        color: $color-piment;
-        font-weight: bold;
+        &::after {
+            transform: translateX(-85%);
+        }
     }
 }

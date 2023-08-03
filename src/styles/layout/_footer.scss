@@ -1,0 +1,19 @@
+.footer {
+    color: $color-white;
+    display: grid;
+    grid-template-rows: 1fr 0.8fr;
+    grid-template-columns: 1fr;
+    &__text {
+        font-size: 0.8rem;
+        color: white;
+        padding-block: 1em;
+        margin-inline: auto;
+    }
+    &--link {
+        font-size: 0.9rem;
+        color: $color-piment;
+    }
+    & img {
+        width: 100%;
+    }
+}

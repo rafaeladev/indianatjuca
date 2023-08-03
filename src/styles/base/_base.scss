@@ -8,6 +8,13 @@ html {
     background-color: #ffffff;
 }
 
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 body {
     background: $color-white;
     //max-width: 1440px;
@@ -39,6 +46,19 @@ a:hover {
         transform: scale(1.1);
         transition-duration: 0.5s;
     }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     background-color: $color-salmon;
+    //     height: 2px;
+    //     width: 0%;
+    //     bottom: 0;
+    //     left: 0;
+    //     transition: all 0.5s ease-in;
+    // }
+    // &:hover::after {
+    //     width: 100%;
+    // }
 }
 
 button {
@@ -78,9 +98,8 @@ footer {
     margin-top: auto;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid $color-salmon;
+    background-color: $color-green;
     width: 100%;
-    // height: 2.5rem;
 }
 
 .site-wrapper {
