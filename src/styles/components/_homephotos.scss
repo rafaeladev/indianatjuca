@@ -1,14 +1,21 @@
 .homePhotos {
     width: 100%;
+    height: 100%;
     display: grid;
     // grid-template-columns: 1fr 1fr;
     // grid-template-columns: 100px;
     grid-template-columns: repeat(2, 1fr);
     // grid-template-rows: repeat(1, minmax(300px, 1fr));
+    grid-template-rows: 1fr 1fr;
     color: $color-white;
+    overflow: hidden;
+    & a {
+        height: 100%;
+        grid-column: 1;
+        overflow: hidden;
+    }
     &--reverse {
         grid-column: 2;
-        grid-row: span 2;
     }
     &--orange {
         background-color: $color-salmon;
@@ -34,20 +41,42 @@
 
     &__img {
         height: 100%;
-        overflow: hidden;
+        grid-row: span 2;
+        // overflow: hidden;
+        // z-index: -1;
         & img {
             width: 100%;
             object-fit: cover;
-            opacity: 0.7;
+            opacity: 0.6;
             height: 100%;
+            transition: all 0.4s ease-in;
+            // filter: blur(0);
+            scale: 1;
         }
     }
     &__txt {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        grid-row: span 2;
+        z-index: 0;
         gap: 10px;
         padding: 20px;
         padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        scale: 1;
+        transition: all 0.4s ease-in;
+    }
+}
+
+.linkHomePhotos {
+    &:hover {
+        & img {
+            // width: 200%;
+            scale: 90%;
+            // filter: blur(3px);
+        }
+        & .homePhotos__txt {
+            scale: 1.1;
+        }
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePhotos = (props) => {
     return (
@@ -8,23 +9,15 @@ const HomePhotos = (props) => {
             >
                 <img src={props.img} />
             </picture>
+
             <div
                 className={props.align ? ` homePhotos__txt homePhotos--align` : ` homePhotos__txt`}
             >
-                <h2
-                    className={
-                        props.color === 'gray' ? 'homePhotos--colorgreen' : 'homePhotos--white'
-                    }
-                >
+                <h2 className={props.color === 'gray' ? 'homePhotos--white' : 'homePhotos--white'}>
                     {props.title}
                 </h2>
-                <p
-                    className={
-                        props.color === 'gray' ? 'homePhotos--colorgreen' : 'homePhotos--white'
-                    }
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet
-                    consectetur felis, suscipit facilisis metus.
+                <p className={props.color === 'gray' ? 'homePhotos--white' : 'homePhotos--white'}>
+                    {props.text}
                 </p>
             </div>
         </div>

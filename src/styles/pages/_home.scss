@@ -58,5 +58,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 5em;
-    grid-template-rows: repeat(2, minmax(300px, 0.6fr));
+    grid-template-rows: repeat(2, minmax(300px, 0.5fr));
+    & a {
+        overflow: hidden;
+    }
 }

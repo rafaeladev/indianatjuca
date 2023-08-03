@@ -65,32 +65,48 @@ const Home = () => {
                     </div>
                 </section>
                 <div className='homePhotosSection'>
-                    <HomePhotos
-                        img={'natal/natal2022/portrait_6.webp'}
-                        color='orange'
-                        title='Natal 2022'
-                        flex={null}
-                    />
-                    <HomePhotos
-                        img={'natal/natal2019/portrait_18.jpg'}
-                        color='green'
-                        title='Natal 2019'
-                        flex={null}
-                    />
-                    <HomePhotos
-                        img={'natal/natal2018/portrait_5.jpg'}
-                        color='gray'
-                        title='Natal 2018'
-                        flex='reverse'
-                        align='right'
-                    />
-                    <HomePhotos
-                        img={'/image-favela2.png'}
-                        color='red'
-                        title='Sobre Nos'
-                        flex='reverse'
-                        align='right'
-                    />
+                    <Link className='linkHomePhotos'>
+                        <HomePhotos
+                            img={'natal/natal2022/portrait_6.webp'}
+                            color='orange'
+                            title='Natal 2022'
+                            flex={null}
+                            text='  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet
+                            consectetur felis, suscipit facilisis metus.'
+                        />
+                    </Link>
+                    <Link className='linkHomePhotos'>
+                        <HomePhotos
+                            img={'natal/natal2019/portrait_18.jpg'}
+                            color='green'
+                            title='Natal 2019'
+                            flex={null}
+                            text='  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet
+                            consectetur felis, suscipit facilisis metus.'
+                        />
+                    </Link>
+                    <Link className='linkHomePhotos'>
+                        <HomePhotos
+                            img={'natal/natal2018/portrait_5.jpg'}
+                            color='gray'
+                            title='Natal 2018'
+                            flex='reverse'
+                            align='right'
+                            text='  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet
+                            consectetur felis, suscipit facilisis metus.'
+                        />
+                    </Link>
+                    <Link className='linkHomePhotos'>
+                        <HomePhotos
+                            img={'/image-favela2.png'}
+                            color='red'
+                            title='Sobre Nos'
+                            flex='reverse'
+                            align='right'
+                            text='  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet
+                            consectetur felis, suscipit facilisis metus.'
+                        />
+                    </Link>
                 </div>
             </div>
         </>

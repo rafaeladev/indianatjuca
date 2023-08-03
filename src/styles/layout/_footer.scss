@@ -1,7 +1,7 @@
 .footer {
     color: $color-white;
     display: grid;
-    grid-template-rows: 1fr 0.8fr;
+    grid-template-rows: 1fr 0.2fr;
     grid-template-columns: 1fr;
     &__text {
         font-size: 0.8rem;
