@@ -3,8 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PhotoGallery = (props) => {
-    return props.data.map((photo) => {
-        return photo.direction === 'horizontal' ? (
+    const horizontalPics = props.data.filter((pic) => pic.position === 'horizontal');
+    const verticalPics = props.data.filter((pic) => pic.position === 'vertical');
+    const photosH = horizontalPics.map((photo) => {
+        return (
             <Link
                 to={'.'}
                 key={nanoid()}
@@ -16,11 +18,14 @@ const PhotoGallery = (props) => {
                     className='galleryImg'
                 />
             </Link>
-        ) : (
+        );
+    });
+    const photosV = verticalPics.map((photo) => {
+        return (
             <Link
                 to={'.'}
                 key={nanoid()}
-                className={'photoGallery__vertical'}
+                className={`photoGallery__vertical`}
             >
                 <img
                     src={`natal/natal${props.year}/${photo.name}.${props.format}`}
@@ -30,6 +35,12 @@ const PhotoGallery = (props) => {
             </Link>
         );
     });
+    return (
+        <>
+            {verticalPics && <div className='container container--vertical'>{photosV}</div>}
+            {horizontalPics && <div className='container container--horizontal'>{photosH}</div>}
+        </>
+    );
 };
 
 export default PhotoGallery;

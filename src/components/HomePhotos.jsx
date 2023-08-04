@@ -18,6 +18,7 @@ const HomePhotos = (props) => {
                 </h2>
                 <p className={props.color === 'gray' ? 'homePhotos--white' : 'homePhotos--white'}>
                     {props.text}
+                    <i className='homePhotos--white'> (...)</i>
                 </p>
             </div>
         </div>

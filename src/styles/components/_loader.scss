@@ -9,11 +9,20 @@
 
 .loader {
     padding: 10px;
-    border: 6px solid $color-salmon;
+    border: 6px solid $color-piment;
     border-bottom-color: transparent;
     border-radius: 22px;
     animation: rotate 1s infinite linear;
     height: 0;
     width: 0;
     font-family: $font-2;
+    display: block;
+    margin: auto;
+
+    &__title {
+        margin-top: 100px;
+        margin-bottom: 40px;
+        margin-inline: auto;
+        text-align: center;
+    }
 }

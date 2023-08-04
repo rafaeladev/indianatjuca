@@ -6,12 +6,6 @@ const NatalLayout = () => {
     return (
         <>
             <Outlet />
-            <Link to={'.'}>
-                <img
-                    src={pic}
-                    alt='see more'
-                />
-            </Link>
         </>
     );
 };

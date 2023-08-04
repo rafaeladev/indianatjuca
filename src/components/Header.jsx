@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 import Logo from '/fav.png';
 import Nav from './Nav.jsx';
 
-const Header = () => {
+const Header = (props) => {
     const headerRef = useRef();
     // Nav scroll color change
     useEffect(() => {
@@ -20,7 +20,7 @@ const Header = () => {
 
     return (
         <header
-            className='header'
+            className={'header'}
             ref={headerRef}
         >
             <Nav />

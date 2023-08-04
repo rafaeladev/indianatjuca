@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PhotoGallery from '../components/PhotoGallery.jsx';
 import { useFetch } from '../apiGoogle.js';
+import Banner from '../components/Banner.jsx';
 
 const Natal2018 = () => {
     const { isLoading, data, error } = useFetch('Natal2018');
+
     if (error) {
         return <span>Oups il y a eu un problème</span>;
     }
+
     return (
         <>
-            <h1>Natal 2018</h1>
-            <div className='container'>
+            <Banner
+                title='Natal 2018'
+                page='natal'
+                img='/natal2018.png'
+            />
+            {/* <h1>Natal 2022</h1> */}
+            <section>
                 {isLoading ? (
-                    <div className='loader'></div>
+                    <>
+                        <h2 className='loader__title'>Loading ... </h2>
+                        <div className='loader'></div>
+                    </>
                 ) : (
-                    <PhotoGallery
-                        data={data}
-                        year={2018}
-                        format='jpg'
-                    />
+                    <div className='container--margin'>
+                        <PhotoGallery
+                            data={data}
+                            year={2018}
+                            format='jpg'
+                        />
+                    </div>
                 )}
-            </div>
+            </section>
         </>
     );
 };

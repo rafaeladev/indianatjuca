@@ -12,9 +12,12 @@
 }
 
 .homeContent {
-    margin-block: 1em;
+    margin-top: 3em;
     &--margin {
-        padding: 20px;
+        padding-block: 20px;
+    }
+    &--article {
+        margin-top: 2em;
     }
     &--display {
         display: inline-block;
@@ -50,7 +53,6 @@
             justify-self: end;
             padding-inline: 40px;
         }
-        padding-block: 20px;
     }
 }
 

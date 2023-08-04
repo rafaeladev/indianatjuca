@@ -9,20 +9,31 @@
 
 .photoGallery {
     &__horizontal {
-        border-radius: 10px;
         width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        margin: 10px;
+        // display: flex;
+        // justify-content: flex-start;
+        overflow: hidden;
+        & img {
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
     }
 
     &__vertical {
-        display: flex;
-        width: 30%;
-        height: 100%;
+        // display: flex;
+        // width: 30%;
+        // height: 100%;
         justify-content: center;
         overflow: hidden;
-        margin: 10px;
+        // margin: 10px;
+        position: relative;
+        & img {
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            top: 20%;
+        }
     }
     &__big {
         width: 100%;
@@ -31,22 +42,29 @@
     }
 }
 
-.galleryImg {
-    width: 100%;
-    object-fit: cover;
-    overflow: hidden;
-}
+// .galleryImg {
+//     width: 100%;
+//     object-fit: cover;
+//     overflow: hidden;
+// }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 20px;
-    width: 60%;
+    display: grid;
+    grid-template-rows: repeat(2, minmax(300px, 1fr));
+    gap: 1em;
 
     & a {
-        height: 100%;
+        width: 100%;
+        max-height: 450px;
+    }
+    &--horizontal {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 1em;
+    }
+    &--vertical {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    &--margin {
+        margin-block: 70px;
     }
 }

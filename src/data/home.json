@@ -4,9 +4,11 @@
         "title": "BR",
         "h2" : ["Um projeto para as", "crianças", "e as", "famílias"],
         "content": "O Natal das crianças da Indiana da favela Indiana Tijuca é um projeto organizado pela Associação de moradores. Esse projeto visa oferecer às crianças uma festa de Natal onde elas encontram com o Papai Noel, recebem presentes, comem bolo, etc... O objetivo desse site é de permitir a quem quiser exercer o espírito de Natal e ajudar financeiramente para a organização desse evento.",
+        "content2":"A comunidade da Indiana Tijuca é uma favela localizada no bairro da Tijuca, zona norte do estado do Rio de Janeiro. Nessa comunidade, vivem mais de 600 familias.",
+        "content3":"Na favela da Indiana existe uma associação de moradores que é responsavel por organizar eventos e formações, ajudar as familias e divulgar informações na favela.",
         "subtitles": {
             "history": "Para ver os anos anteriores :",
-            "action": "Clique aqui para participar esse ano"
+            "action": "Clique aqui para participar do natal 2023"
         },
         "name": "Natal",
         "pic":"https://zupimages.net/up/23/14/fq08.png"
@@ -16,6 +18,8 @@
         "title": "FR",
         "h2" : ["Um projet pour les", "enfants", "et les", "familles"],
         "content": "Le Noël des enfants de la favela Indiana Tijuca est un projet organisé par l'Association des résidents. Ce projet vise à offrir aux enfants une fête de Noël, ils y rencontrent le Père Noël, reçoivent des cadeaux, mangent du gâteau, etc... Le but de ce site est de permettre à qui le veut de participer à l'esprit de Noël en aidant financièrement à l'organisation de cet événement.",
+        "content2":"La communauté Indiana Tijuca est une favela située dans le quartier de Tijuca, dans la partie nord de l'État de Rio de Janeiro. Dans cette communauté, plus de 600 familles vivent.",
+        "content3":"Dans la favela d'Indiana, il existe une association d'habitants chargée d'organiser des événements et des formations, d'aider les familles et de diffuser l'information dans la favela.",
         "subtitles": {
             "history": "Pour voir les années précédentes :",
             "action": "Cliquez ici participer au Noël 2023"
@@ -28,9 +32,11 @@
         "title": "EN",
         "h2" : ["A project for", "the children", "and their", "families"],
         "content": "The Indiana's Children's Christmas of the Indiana Tijuca favela is a project organized by the Residents' Association. This project aims to offer children a Christmas event, there they meet meet Santa Claus, receive presents, eat cake, etc... The objective of this website is enable whoever wants to participate to this Christmas spirit by helping financially to organize this event.",
+        "content2":"The Indiana Tijuca community is a favela located in the Tijuca neighborhood, in the northern part of the state of Rio de Janeiro. In this community, more than 600 families live.",
+        "content3":"In the favela of Indiana there is an association of residents that is responsible for organizing events and training, helping families and disseminating information in the favela.",
         "subtitles": {
             "history": "To see previous years:",
-            "action": "Click here to participate this year"
+            "action": "Click here to participate in 2023's christmas"
         },
         "name": "Christmas",
         "pic":"https://zupimages.net/up/23/14/79hr.png"

@@ -1,0 +1,26 @@
+.bannerImg {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    z-index: 0;
+    width: 100%;
+}
+
+.bannerTitle {
+    position: absolute;
+    z-index: 10;
+    max-width: 1440px;
+    padding-inline: 100px;
+    width: 100%;
+    text-align: right;
+    top: 50%;
+    display: flex;
+    justify-content: flex-end;
+    & h1 {
+        color: $color-white;
+        border-right: 2px dashed;
+        border-bottom: 2px dashed;
+        width: fit-content;
+        padding: 5px 15px;
+    }
+}
