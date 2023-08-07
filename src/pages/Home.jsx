@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext, useRef, useEffect } from 'react';
+import { nanoid } from 'nanoid';
 
 import Banner from '../components/Banner.jsx';
 import PhotoCard from '../components/PhotoCard.jsx';
@@ -57,7 +58,12 @@ const Home = () => {
                     <h1 className='homeContent--margin'>Indiana Tijuca</h1>
                     <p>{content2}</p>
                     <p className='homeContent--margin'>{content3}</p>
-                    <h2 className='homeContent__title'>{homeTitle && homeTitle}</h2>
+                    <h2
+                        className='homeContent__title'
+                        key={homeTitle}
+                    >
+                        {homeTitle && homeTitle}
+                    </h2>
                     <div className='homeContent__text homeContent--margin'>
                         <p>{content}</p>
                     </div>
@@ -74,47 +80,57 @@ const Home = () => {
                         <>anteriores</>
                     </h2>
                 </section>
-                <aticle>
-                    <div className='homePhotosSection'>
-                        <Link className='linkHomePhotos'>
-                            <HomePhotos
-                                img={'natal/natal2022/portrait_6.webp'}
-                                color='orange'
-                                title='Natal 2022'
-                                flex={null}
-                                text='Eu pude estar presente durante a organização da festa de natal de 2022 e tirar as fotos.'
-                            />
-                        </Link>
-                        <Link className='linkHomePhotos'>
-                            <HomePhotos
-                                img={'natal/natal2020/portrait_01.jpeg'}
-                                color='green'
-                                title='Natal 2020'
-                                flex={null}
-                                text='O natal 2020 foi o primeiro ano em que pedimos ajuda dos nossos amigos pelo site para organizar.'
-                            />
-                        </Link>
-                        <Link className='linkHomePhotos'>
-                            <HomePhotos
-                                img={'natal/natal2019/portrait_18.jpg'}
-                                color='gray'
-                                title='Natal 2019'
-                                flex='reverse'
-                                align='right'
-                                text='O natal 2019 foi o segundo ano do projeto e tivemos a visita do papai noel.'
-                            />
-                        </Link>
-                        <Link className='linkHomePhotos'>
-                            <HomePhotos
-                                img={'natal/natal2018/portrait_5.jpg'}
-                                color='red'
-                                title='Natal 2018'
-                                flex='reverse'
-                                align='right'
-                                text='No ano 2018 o projeto do natal das crianças começou.'
-                            />
-                        </Link>
-                    </div>
+                <aticle className='homePhotosSection'>
+                    <Link
+                        className='linkHomePhotos'
+                        key={nanoid()}
+                    >
+                        <HomePhotos
+                            img={'natal/natal2022/portrait_6.webp'}
+                            color='orange'
+                            title='Natal 2022'
+                            flex={null}
+                            text='Eu pude estar presente durante a organização da festa de natal de 2022 e tirar as fotos.'
+                        />
+                    </Link>
+                    <Link
+                        className='linkHomePhotos'
+                        key={nanoid()}
+                    >
+                        <HomePhotos
+                            img={'natal/natal2020/portrait_01.jpeg'}
+                            color='green'
+                            title='Natal 2020'
+                            flex={null}
+                            text='O natal 2020 foi o primeiro ano em que pedimos ajuda dos nossos amigos pelo site para organizar.'
+                        />
+                    </Link>
+                    <Link
+                        className='linkHomePhotos'
+                        key={nanoid()}
+                    >
+                        <HomePhotos
+                            img={'natal/natal2019/portrait_18.jpg'}
+                            color='gray'
+                            title='Natal 2019'
+                            flex='reverse'
+                            align='right'
+                            text='O natal 2019 foi o segundo ano do projeto e tivemos a visita do papai noel.'
+                        />
+                    </Link>
+                    <Link
+                        className='linkHomePhotos'
+                        key={nanoid()}
+                    >
+                        <HomePhotos
+                            img={'natal/natal2018/portrait_5.jpg'}
+                            color='red'
+                            title='Natal 2018'
+                            flex='reverse'
+                            align='right'
+                            text='No ano 2018 o projeto do natal das crianças começou.'
+                        />
+                    </Link>
                 </aticle>
             </div>
         </>

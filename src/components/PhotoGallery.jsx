@@ -1,58 +1,83 @@
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import leftArrow from '/leftArrow.png';
+import rightArrow from '/rightArrow.png';
 
 const PhotoGallery = (props) => {
-    const horizontalPics = props.data.filter((pic) => pic.position === 'horizontal');
-    const verticalPics = props.data.filter((pic) => pic.position === 'vertical');
-    const [file, setFile] = useState(null);
-    // const photosH = horizontalPics.map((photo, index) => {
-    //     return (
-    //         <div
-    //             key={nanoid()}
-    //             className={`photoGallery__horizontal`}
-    //             onClick={() => setFile(photo)}
-    //         >
-    //             <img
-    //                 src={`natal/natal${props.year}/${photo.name}.${props.format}`}
-    //                 alt={`${photo.id}`}
-    //                 className='galleryImg'
-    //             />
-    //         </div>
-    //     );
-    // });
-    const photosV = verticalPics.map((photo) => {
+    const [file, setFile] = useState({ name: null, number: null });
+    let namePic = [];
+
+    const photos = props.data.map((photo, index) => {
+        namePic = [...namePic, photo.name];
         return (
-            <>
-                <div
-                    key={nanoid()}
-                    className={`photoGallery__vertical`}
-                    onClick={() => setFile(photo.name)}
-                >
-                    <img
-                        src={`natal/natal${props.year}/${photo.name}.${props.format}`}
-                        alt={`${photo.id}`}
-                        className='galleryImg'
-                    />
-                </div>
-                <div
-                    className='popup-media'
-                    style={{ display: file ? 'block' : 'none' }}
-                >
-                    <span onClick={() => setFile(null)}>&times;</span>
-                    <img
-                        src={`natal/natal${props.year}/${file}.${props.format}`}
-                        alt={`${photo.id}`}
-                        className='galleryImg'
-                    />
-                </div>
-            </>
+            <div
+                key={nanoid()}
+                className={`${
+                    photo.position === 'vertical'
+                        ? `photoGallery photoGallery__vertical`
+                        : `photoGallery photoGallery__horizontal`
+                }`}
+                onClick={() => setFile(() => ({ name: photo.name, number: index }))}
+            >
+                <img
+                    key={index}
+                    src={`natal/natal${props.year}/${photo.name}.${props.format}`}
+                    alt={`${photo.id}`}
+                    className='galleryImg'
+                />
+            </div>
         );
     });
+
+    const nextPhoto = () => {
+        setFile(() => ({
+            name: namePic[file.number + 1],
+            number: file.number === props.data.length - 1 ? 0 : file.number + 1,
+        }));
+    };
+
+    const prevPhoto = () => {
+        setFile(() => ({
+            name: namePic[file.number - 1],
+            number: file.number === props.data.length - 1 ? 0 : file.number - 1,
+        }));
+    };
+
     return (
         <>
-            {verticalPics && <div className='container container--vertical'>{photosV}</div>}
-            {/* {horizontalPics && <div className='container container--horizontal'>{photosH}</div>} */}
+            {photos}
+            <div
+                className='popup-media'
+                style={{ display: file.name ? 'block' : 'none' }}
+            >
+                <span onClick={() => setFile(() => ({ name: null, number: null }))}>&times;</span>
+                {file.name != null ? (
+                    <img
+                        src={`natal/natal${props.year}/${file.name}.${props.format}`}
+                        alt={`${file.number}`}
+                        className='popup-media__photo'
+                    />
+                ) : null}
+                <i>{`${file.number + 1} / ${props.data.length}`}</i>
+
+                <img
+                    className={
+                        props.data.length > 1 ? `popup-media__leftArrow` : `popup-media__noArrow`
+                    }
+                    src={leftArrow}
+                    alt='left arrow icon'
+                    onClick={prevPhoto}
+                />
+                <img
+                    className={
+                        props.data.length > 1 ? `popup-media__rightArrow` : `popup-media__noArrow`
+                    }
+                    src={rightArrow}
+                    alt='right arrow icon'
+                    onClick={nextPhoto}
+                />
+            </div>
         </>
     );
 };

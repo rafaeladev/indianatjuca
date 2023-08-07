@@ -25,7 +25,7 @@ const Natal2018 = () => {
                         <div className='loader'></div>
                     </>
                 ) : (
-                    <div className='container--margin'>
+                    <div className='container container--margin'>
                         <PhotoGallery
                             data={data}
                             year={2018}

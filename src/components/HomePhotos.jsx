@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 
 const HomePhotos = (props) => {
     return (
-        <div className={`homePhotos homePhotos--${props.color}`}>
+        <div
+            className={`homePhotos homePhotos--${props.color}`}
+            key={props.title}
+        >
             <picture
                 className={props.flex ? ` homePhotos__img homePhotos--reverse` : ` homePhotos__img`}
             >
