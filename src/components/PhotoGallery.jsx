@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import leftArrow from '/leftArrow.png';
 import rightArrow from '/rightArrow.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const PhotoGallery = (props) => {
     const [file, setFile] = useState({ name: null, number: null });
@@ -20,11 +21,15 @@ const PhotoGallery = (props) => {
                 }`}
                 onClick={() => setFile(() => ({ name: photo.name, number: index }))}
             >
-                <img
-                    key={index}
-                    src={`natal/natal${props.year}/${photo.name}.${props.format}`}
+                <LazyLoadImage
+                    key={photo.name}
+                    src={`/natal/natal${props.year}/${photo.name}.${props.format}`}
                     alt={`${photo.id}`}
                     className='galleryImg'
+                    // height={500}
+                    // width={333}
+                    effect='blur'
+                    placeholderSrc={`/natal/natal${props.year}/${photo.name}.${props.format}`}
                 />
             </div>
         );

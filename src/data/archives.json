@@ -1,0 +1,54 @@
+[
+    {
+        "id": "2022",
+        "urlImg": "natal/natal2022/portrait_6.webp",
+        "backColor": "orange",
+        "title": { "BR": "Natal 2022", "EN": "Christmas 2022", "FR": "Nöel 2022" },
+        "flex":null,
+        "align":null,
+        "text": {
+            "BR": "Eu pude estar presente durante a organização da festa de natal de 2022 e tirar as fotos.",
+            "EN": "I was able to be present during the organization of the 2022 Christmas party and take the pictures.",
+            "FR": "J'ai pu être présente lors de l'organisation de la fête de Noël 2022 et prendre les photos."
+        }
+    },
+    {
+        "id": "2020",
+        "urlImg": "natal/natal2020/portrait_01.jpeg",
+        "backColor": "green",
+        "title": { "BR": "Natal 2020", "EN": "Christmas 2020", "FR": "Nöel 2020" },
+        "flex":null,
+        "align":null,
+        "text": {
+            "BR": "O natal 2020 foi o primeiro ano em que pedimos ajuda dos nossos amigos pelo site para organizar.",
+            "EN": "Christmas 2020 was the first year we asked our friends for help on the website to organize.",
+            "FR": "Noël 2020 a été la première année où nous avons demandé de l'aide à nos amis sur le site Web pour l'organisation."
+        }
+    },
+    {
+        "id": "2019",
+        "urlImg": "natal/natal2019/portrait_18.jpg",
+        "backColor": "gray",
+        "title": { "BR": "Natal 2019", "EN": "Christmas 2019", "FR": "Nöel 2019" },
+        "flex": "reverse",
+        "align":"right",
+        "text": {
+            "BR": "O natal 2019 foi o segundo ano do projeto e tivemos a visita do papai noel.",
+            "EN": "Christmas 2019 was the second year of the project and we had a visit from Santa Claus.",
+            "FR": "Le noël 2019 était la deuxième année du projet et nous avons eu la visite du Père Noël."
+        }
+    },
+    {
+        "id": "2018",
+        "urlImg": "natal/natal2018/portrait_5.jpg",
+        "backColor": "red",
+        "title": { "BR": "Natal 2018", "EN": "Christmas 2018", "FR": "Nöel 2018" },
+        "flex": "reverse",
+        "align":"right",
+        "text": {
+            "BR": "No ano 2018 o projeto do natal das crianças começou.",
+            "EN": "In 2018, the children's Christmas project began.",
+            "FR": "En 2018, le projet de Noël des enfants a commencé."
+        }
+    }
+]

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 //Lien vers les API google
 const apiGoogle =
-    'https://script.google.com/macros/s/AKfycbw1MrNb2d0sZH48E1pVlGVrke-3gtDk2AmbTU3XMB7Kfj8RpeeQF8yPBHLj_tMwckI/exec';
+    'https://script.google.com/macros/s/AKfycbwSay2z6NuMwpmO1wVDwttT5bx_wNgVRAyCv00drd_jBraPlZRKfc8tKTEo8w9p3jaq/exec';
 
 export async function getPhotos(id) {
     const url = `${apiGoogle}?action=get${id}`;

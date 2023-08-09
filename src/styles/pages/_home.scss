@@ -13,6 +13,8 @@
 
 .homeContent {
     margin-top: 3em;
+    padding-inline: $layout-padding;
+    max-width: 1440px;
     &--margin {
         padding-block: 20px;
     }
@@ -23,14 +25,13 @@
         display: inline-block;
         color: $color-piment;
         font-family: $font-1;
+        font-size: 2rem;
     }
     &--orange {
-        font-size: 2rem;
         padding-inline: 0.3em;
         color: $color-salmon;
     }
     &--green {
-        font-size: 2rem;
         padding-inline: 0.3em;
         color: $color-green;
     }

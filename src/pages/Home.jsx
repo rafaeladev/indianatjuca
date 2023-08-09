@@ -3,11 +3,11 @@ import { useContext, useRef, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 
 import Banner from '../components/Banner.jsx';
-import PhotoCard from '../components/PhotoCard.jsx';
 
 import hommebanner from '/Group1.png';
 
 import contentData from '../data/home.json';
+import homePhotoCardData from '../data/archives.json';
 
 import { LngContext } from '../utils/context.jsx';
 import { Link } from 'react-router-dom';
@@ -22,27 +22,56 @@ const Home = () => {
         (data) => data.title === language
     );
 
-    const yearsButtons = years.map((year) => {
+    const cardElements = homePhotoCardData.map((data) => {
         return (
-            <Link to={`natal/${year}`}>
-                <button
-                    key={year}
-                    className='yearsButton'
+            <li key={data.id}>
+                <Link
+                    className='linkHomePhotos'
+                    key={data.id}
+                    to={`natal/${data.id}`}
                 >
-                    {name} {year}
-                </button>
-            </Link>
+                    <HomePhotos
+                        img={data.urlImg}
+                        color={data.backColor}
+                        title={data.title[language]}
+                        flex={data.flex}
+                        align={data.align}
+                        text={data.text[language]}
+                    />
+                </Link>
+            </li>
         );
     });
 
     const homeTitle = h2.map((title, index) => {
         if (index === 1) {
-            return <i className='homeContent--orange homeContent--display'> {` ${title} `} </i>;
+            return (
+                <i
+                    key={index}
+                    className='homeContent--orange homeContent--display'
+                >
+                    {` ${title} `}
+                </i>
+            );
         }
         if (index === 3) {
-            return <i className='homeContent--green homeContent--display'> {title}</i>;
+            return (
+                <i
+                    key={index}
+                    className='homeContent--green homeContent--display'
+                >
+                    {title}
+                </i>
+            );
         } else {
-            return <>{title}</>;
+            return (
+                <i
+                    key={index}
+                    className='homeContent--display'
+                >
+                    {title}
+                </i>
+            );
         }
         return;
     });
@@ -60,7 +89,7 @@ const Home = () => {
                     <p className='homeContent--margin'>{content3}</p>
                     <h2
                         className='homeContent__title'
-                        key={homeTitle}
+                        key={nanoid()}
                     >
                         {homeTitle && homeTitle}
                     </h2>
@@ -80,58 +109,7 @@ const Home = () => {
                         <>anteriores</>
                     </h2>
                 </section>
-                <aticle className='homePhotosSection'>
-                    <Link
-                        className='linkHomePhotos'
-                        key={nanoid()}
-                    >
-                        <HomePhotos
-                            img={'natal/natal2022/portrait_6.webp'}
-                            color='orange'
-                            title='Natal 2022'
-                            flex={null}
-                            text='Eu pude estar presente durante a organização da festa de natal de 2022 e tirar as fotos.'
-                        />
-                    </Link>
-                    <Link
-                        className='linkHomePhotos'
-                        key={nanoid()}
-                    >
-                        <HomePhotos
-                            img={'natal/natal2020/portrait_01.jpeg'}
-                            color='green'
-                            title='Natal 2020'
-                            flex={null}
-                            text='O natal 2020 foi o primeiro ano em que pedimos ajuda dos nossos amigos pelo site para organizar.'
-                        />
-                    </Link>
-                    <Link
-                        className='linkHomePhotos'
-                        key={nanoid()}
-                    >
-                        <HomePhotos
-                            img={'natal/natal2019/portrait_18.jpg'}
-                            color='gray'
-                            title='Natal 2019'
-                            flex='reverse'
-                            align='right'
-                            text='O natal 2019 foi o segundo ano do projeto e tivemos a visita do papai noel.'
-                        />
-                    </Link>
-                    <Link
-                        className='linkHomePhotos'
-                        key={nanoid()}
-                    >
-                        <HomePhotos
-                            img={'natal/natal2018/portrait_5.jpg'}
-                            color='red'
-                            title='Natal 2018'
-                            flex='reverse'
-                            align='right'
-                            text='No ano 2018 o projeto do natal das crianças começou.'
-                        />
-                    </Link>
-                </aticle>
+                <ul className='homePhotosSection'>{cardElements}</ul>
             </div>
         </>
     );

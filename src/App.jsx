@@ -45,16 +45,8 @@ const App = () => {
                         element={<Historico />}
                     />
                     <Route
-                        path='2018'
-                        element={<Natal2018 />}
-                    />
-                    <Route
-                        path='2019'
-                        element={<Natal2019 />}
-                    />
-                    <Route
-                        path='2022'
-                        element={<Natal2022 />}
+                        path=':id'
+                        element={<Natal />}
                     />
                 </Route>
 
