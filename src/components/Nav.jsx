@@ -63,9 +63,9 @@ const Nav = () => {
                 >
                     Infos
                 </NavLink>
-            </ul>
-            <ul className='nav__lang'>
-                <ChangeLanguage />
+                <li className='nav__lang'>
+                    <ChangeLanguage />
+                </li>
             </ul>
         </nav>
     );

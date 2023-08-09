@@ -15,6 +15,9 @@
     margin-top: 3em;
     padding-inline: $layout-padding;
     max-width: 1440px;
+    @include mobile-only {
+        padding-inline: 1em;
+    }
     &--margin {
         padding-block: 20px;
     }
@@ -62,6 +65,10 @@
     grid-template-columns: 1fr 1fr;
     margin-bottom: 5em;
     grid-template-rows: repeat(2, minmax(300px, 0.5fr));
+    @include mobile-only {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, minmax(300px, 1fr));
+    }
     & a {
         overflow: hidden;
     }

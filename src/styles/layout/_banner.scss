@@ -16,11 +16,18 @@
     top: 50%;
     display: flex;
     justify-content: flex-end;
+    @include mobile-only {
+        justify-content: center;
+        padding-inline: 1em;
+    }
     & h1 {
         color: $color-white;
         border-right: 2px dashed;
         border-bottom: 2px dashed;
         width: fit-content;
         padding: 5px 15px;
+        @include mobile-only {
+            width: 100%;
+        }
     }
 }

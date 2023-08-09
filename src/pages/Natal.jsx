@@ -9,8 +9,6 @@ const Natal = () => {
     const natalYear = params.id;
     const { isLoading, data, error } = useFetch(`Natal${natalYear}`);
 
-    console.log(data);
-
     if (error) {
         return <span>Oups il y a eu un problème</span>;
     }
@@ -22,7 +20,6 @@ const Natal = () => {
                 page='natal'
                 img={`/natal${natalYear}.png`}
             />
-            {/* <h1>Natal 2022</h1> */}
             <section>
                 {isLoading ? (
                     <>

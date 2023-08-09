@@ -3,6 +3,9 @@
     display: grid;
     grid-template-rows: 1fr 0.2fr;
     grid-template-columns: 1fr;
+    @include mobile-only {
+        grid-template-rows: 1fr;
+    }
     &__text {
         font-size: 0.8rem;
         color: white;

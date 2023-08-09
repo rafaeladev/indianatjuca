@@ -14,9 +14,6 @@ import Home from './pages/Home';
 import Historico from './pages/Archives';
 import About from './pages/Infos.jsx';
 import Natal from './pages/Natal.jsx';
-import Natal2018 from './pages/Natal2018.jsx';
-import Natal2019 from './pages/Natal2019.jsx';
-import Natal2022 from './pages/Natal2022.jsx';
 import NatalLayout from './components/NatalLayout.jsx';
 
 const App = () => {

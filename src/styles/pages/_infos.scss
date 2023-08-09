@@ -41,6 +41,9 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         align-items: center;
+        @include mobile-only {
+            grid-template-columns: 1fr;
+        }
     }
     &__caption {
         position: absolute;

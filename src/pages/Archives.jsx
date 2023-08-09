@@ -16,19 +16,18 @@ const Historico = () => {
                 className='card-item'
                 key={data.id}
             >
-                <div
-                    className='card-img'
-                    style={{
-                        backgroundImage: `url(${data.urlImg})`,
-                    }}
+                <Link
+                    className='card-link'
+                    to={`/natal/${data.id}`}
                 >
-                    <Link
-                        className='card-link'
-                        to={`natal/${data.id}`}
-                    >
-                        <button className='buttonNow'>{data.title[language]}</button>
-                    </Link>
-                </div>
+                    <div
+                        className='card-img'
+                        style={{
+                            backgroundImage: `url(${data.urlImg})`,
+                        }}
+                    ></div>
+                    <h2>{data.title[language]}</h2>
+                </Link>
             </li>
         );
     });

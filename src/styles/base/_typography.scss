@@ -7,6 +7,9 @@
     font-family: $font-2;
     color: $color-green;
     font-size: 18px;
+    @include mobile-only {
+        font-size: 18px;
+    }
 }
 
 h1,

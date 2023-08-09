@@ -59,7 +59,7 @@ const PhotoGallery = (props) => {
                 <span onClick={() => setFile(() => ({ name: null, number: null }))}>&times;</span>
                 {file.name != null ? (
                     <img
-                        src={`natal/natal${props.year}/${file.name}.${props.format}`}
+                        src={`/natal/natal${props.year}/${file.name}.${props.format}`}
                         alt={`${file.number}`}
                         className='popup-media__photo'
                     />

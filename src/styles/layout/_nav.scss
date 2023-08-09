@@ -1,14 +1,12 @@
 .nav {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    max-width: 1400px;
-    min-width: 100vh;
+    min-width: 100%;
     margin-inline: auto;
     &__logo {
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        padding-bottom: 1em;
+        font-weight: bolder;
     }
     &__link {
         display: flex;
@@ -16,8 +14,10 @@
         margin-left: auto;
         align-items: flex-end;
         justify-content: center;
+        padding-block: 0.5em;
         &__item {
             position: relative;
+            padding: 0.2em;
             &::after {
                 content: '';
                 position: absolute;
@@ -51,9 +51,6 @@
     & button {
         background-color: $color-salmon;
     }
-    &__lang {
-        margin-left: 40px;
-    }
 }
 
 .selectBox {
@@ -61,4 +58,6 @@
     border: none;
     font-size: 1rem;
     color: $color-piment;
+    padding: 0.2em;
+    border-radius: 5px;
 }

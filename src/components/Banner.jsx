@@ -26,12 +26,15 @@ const Banner = (props) => {
         width: '880px',
         gridColumn: '1 / -1',
         backgroundColor: '#c2c2cc',
-        marginBlock: '90px',
+        marginTop: '180px',
+        marginBottom: '90px',
         padding: '40px',
     };
     const banner = {
         width: '100%',
-        backgroundColor: `${props.page === 'natal' ? '#c2c2cc' : '#13323e'}`,
+        backgroundColor: `${
+            props.page === 'natal' ? '#c2c2cc' : props.page === 'home' ? '#c2c2cc' : '#13323e'
+        }`,
         display: 'flex',
         justifyContent: 'center',
     };
