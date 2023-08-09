@@ -30,7 +30,7 @@
     &::after {
         content: '';
         background-color: $color-green;
-        width: 110%;
+        width: 120%;
         height: 100%;
         top: 0;
         position: absolute;
@@ -40,7 +40,7 @@
     }
     &:hover {
         &::after {
-            transform: translateX(-85%);
+            transform: translateX(-75%);
         }
     }
 }

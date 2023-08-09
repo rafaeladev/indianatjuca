@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Logo from '/fav.png';
 import Nav from './Nav.jsx';
 

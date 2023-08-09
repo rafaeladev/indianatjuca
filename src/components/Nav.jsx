@@ -32,7 +32,7 @@ const Nav = () => {
                         isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
                     }
                 >
-                    Home
+                    {language === 'FR' ? 'Accueil' : 'Home'}
                 </NavLink>
                 <NavLink
                     to='/natal/2022'
@@ -40,7 +40,11 @@ const Nav = () => {
                         isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
                     }
                 >
-                    Natal 2022
+                    {language === 'BR'
+                        ? 'Natal 2022'
+                        : language === 'FR'
+                        ? 'Noël 2022'
+                        : 'Christmas 2022'}
                 </NavLink>
                 <NavLink
                     to='natal'

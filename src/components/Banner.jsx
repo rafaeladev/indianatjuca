@@ -31,7 +31,7 @@ const Banner = (props) => {
     };
     const banner = {
         width: '100%',
-        backgroundColor: '#c2c2cc',
+        backgroundColor: `${props.page === 'natal' ? '#c2c2cc' : '#13323e'}`,
         display: 'flex',
         justifyContent: 'center',
     };
