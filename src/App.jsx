@@ -1,10 +1,8 @@
 import React from 'react';
 import {
     RouterProvider,
-    createHashRouter,
+    createBrowserRouter,
     createRoutesFromElements,
-    HashRouter,
-    Routes,
     Route,
 } from 'react-router-dom';
 
@@ -22,7 +20,7 @@ import Natal2022 from './pages/Natal2022.jsx';
 import NatalLayout from './components/NatalLayout.jsx';
 
 const App = () => {
-    const router = createHashRouter(
+    const router = createBrowserRouter(
         createRoutesFromElements(
             <Route
                 path='/'
