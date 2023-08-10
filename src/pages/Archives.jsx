@@ -7,6 +7,7 @@ import hommebanner from '/back2.png';
 import Banner from '../components/Banner.jsx';
 
 import archives from '../data/archives.json';
+import CTA from '../components/CTA.jsx';
 
 const Historico = () => {
     const { language } = useContext(LngContext);
@@ -42,6 +43,7 @@ const Historico = () => {
             <section>
                 <ul className='archives'>{cardElements}</ul>
             </section>
+            <CTA />
         </>
     );
 };

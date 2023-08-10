@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import ChangeLanguage from './ChangeLanguage.jsx';
 import { useContext } from 'react';
 import { LngContext } from '../utils/context.jsx';
-import Logo from '/fav.png';
 
 const Nav = () => {
     const { language } = useContext(LngContext);
@@ -22,16 +21,16 @@ const Nav = () => {
                     {language === 'FR' ? 'Accueil' : 'Home'}
                 </NavLink>
                 <NavLink
-                    to='/natal/2022'
+                    to='/natal/loading'
                     className={({ isActive }) =>
                         isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
                     }
                 >
                     {language === 'BR'
-                        ? 'Natal 2022'
+                        ? 'Natal 2023'
                         : language === 'FR'
-                        ? 'Noël 2022'
-                        : 'Christmas 2022'}
+                        ? 'Noël 2023'
+                        : 'Christmas 2023'}
                 </NavLink>
                 <NavLink
                     to='natal'

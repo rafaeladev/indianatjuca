@@ -16,6 +16,7 @@ import About from './pages/Infos.jsx';
 import Natal, { loader as natalPageLoader } from './pages/Natal.jsx';
 import NatalLayout from './components/NatalLayout.jsx';
 import AppWrapper from './components/AppWrapper.jsx';
+import NatalLoading from './components/NatalLoading.jsx';
 
 const App = () => {
     const router = createBrowserRouter(
@@ -46,6 +47,10 @@ const App = () => {
                             element={<Natal />}
                             loader={natalPageLoader}
                             errorElement={<h1>An Error occured</h1>}
+                        />
+                        <Route
+                            path='loading'
+                            element={<NatalLoading />}
                         />
                     </Route>
 

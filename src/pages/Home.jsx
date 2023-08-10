@@ -16,7 +16,7 @@ import HomePhotos from '../components/HomePhotos.jsx';
 const Home = () => {
     const titleRef = useRef();
     const { language } = useContext(LngContext);
-    const years = [2018, 2019, 2022];
+    const years = [2018, 2019, 2022, 2023];
     const yearsSize = years.length;
     const { h2, content, content2, content3, subtitles, name } = contentData.find(
         (data) => data.title === language

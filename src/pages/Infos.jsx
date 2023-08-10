@@ -12,6 +12,7 @@ import favela from '/image-favela2.png';
 import aboutData from '../data/about.json';
 import aboutFile from '../data/aboutnew.json';
 import Banner from '../components/Banner.jsx';
+import CTA from '../components/CTA.jsx';
 
 const About = () => {
     const { language } = useContext(LngContext);
@@ -139,6 +140,7 @@ const About = () => {
             <section className='infos'>
                 <h2 className='hidden'>{section4.subtitle}</h2>
             </section>
+            <CTA />
         </>
     );
 };
