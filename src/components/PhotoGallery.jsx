@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import leftArrow from '/leftArrow.png';
 import rightArrow from '/rightArrow.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 
 const PhotoGallery = (props) => {
     const [file, setFile] = useState({ name: null, number: null });

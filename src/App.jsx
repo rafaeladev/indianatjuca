@@ -13,8 +13,9 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Historico from './pages/Archives';
 import About from './pages/Infos.jsx';
-import Natal from './pages/Natal.jsx';
+import Natal, { loader as natalPageLoader } from './pages/Natal.jsx';
 import NatalLayout from './components/NatalLayout.jsx';
+import AppWrapper from './components/AppWrapper.jsx';
 
 const App = () => {
     const router = createBrowserRouter(
@@ -23,32 +24,36 @@ const App = () => {
                 path='/'
                 element={<Layout />}
             >
-                <Route
-                    index
-                    element={<Home />}
-                />
-                <Route
-                    path='natal'
-                    element={<Natal />}
-                />
-                <Route
-                    path='natal'
-                    element={<NatalLayout />}
-                >
+                <Route element={<AppWrapper />}>
                     <Route
                         index
-                        element={<Historico />}
+                        element={<Home />}
                     />
                     <Route
-                        path=':id'
+                        path='natal'
                         element={<Natal />}
                     />
-                </Route>
+                    <Route
+                        path='natal'
+                        element={<NatalLayout />}
+                    >
+                        <Route
+                            index
+                            element={<Historico />}
+                        />
+                        <Route
+                            path=':id'
+                            element={<Natal />}
+                            loader={natalPageLoader}
+                            errorElement={<h1>An Error occured</h1>}
+                        />
+                    </Route>
 
-                <Route
-                    path='infos'
-                    element={<About />}
-                />
+                    <Route
+                        path='infos'
+                        element={<About />}
+                    />
+                </Route>
             </Route>
         )
     );
