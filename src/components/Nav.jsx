@@ -12,19 +12,6 @@ const Nav = () => {
 
     return (
         <nav className='nav'>
-            <div className='nav__logo'>
-                <Link to='/'>
-                    <img
-                        className='nav__img'
-                        src={Logo}
-                        alt='logo'
-                    />
-                </Link>
-
-                <Link to='/'>
-                    <p>Natal Indiana Tijuca</p>
-                </Link>
-            </div>
             <ul className='nav__link'>
                 <NavLink
                     to='/'

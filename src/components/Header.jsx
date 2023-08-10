@@ -1,6 +1,7 @@
 import React from 'react';
-import { useRef, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRef, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import BurgerMenu from './BurgerMenu.jsx';
 import Logo from '/fav.png';
 import Nav from './Nav.jsx';
 
@@ -19,12 +20,47 @@ const Header = (props) => {
         });
     });
 
+    const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+    const toggleHamburger = () => {
+        setHamburgerOpen(!hamburgerOpen);
+    };
+
     return (
         <header
             className={'header'}
             ref={headerRef}
         >
-            <Nav />
+            <div className='nav__logo'>
+                <Link to='/'>
+                    <img
+                        className='nav__img'
+                        src={Logo}
+                        alt='logo'
+                    />
+
+                    <p>Natal Indiana Tijuca</p>
+                </Link>
+            </div>
+            <div className='nav nav__desktop'>
+                <Nav />
+            </div>
+            <div
+                className='nav__mobile'
+                onClick={toggleHamburger}
+            >
+                <BurgerMenu
+                    isOpen={hamburgerOpen}
+                    onClick={toggleHamburger}
+                />
+                <div
+                    className={
+                        hamburgerOpen ? 'hamburger__menu hamburger--open' : 'hamburger__menu'
+                    }
+                >
+                    <Nav />
+                </div>
+            </div>
         </header>
     );
 };

@@ -1,0 +1,83 @@
+.hamburger {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-radius: 12px;
+    padding: 6px;
+    z-index: 100;
+    cursor: pointer;
+    background-color: $color-white;
+
+    @include mobile-only {
+        display: flex;
+    }
+    &:hover {
+        background-color: lighten($color-white, 10%);
+        color: white;
+    }
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        padding-inline: 20px;
+        flex-direction: column;
+        padding-block: 100px;
+        align-items: center;
+        transition: all 0.3s ease-in;
+        overflow: hidden;
+        z-index: -1;
+        opacity: 0;
+        pointer-events: none;
+        background-color: $color-white;
+        & a {
+            display: flex;
+            flex-direction: column;
+            margin-block: 20px;
+        }
+    }
+    &--open {
+        opacity: 1;
+        pointer-events: visible;
+    }
+}
+
+.bar {
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 10px;
+    background-color: $color-piment;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+    transform: rotate(0);
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+
+    &--open-1 {
+        transform: rotate(45deg);
+    }
+    &--closed-1 {
+        transform: rotate(45deg);
+    }
+    &--open-2 {
+        opacity: 0;
+    }
+    &--closed-2 {
+        opacity: 1;
+    }
+    &--open-3 {
+        transform: rotate(-45deg);
+    }
+    &--closed-3 {
+        transform: rotate(0);
+    }
+}
