@@ -1,11 +1,11 @@
 import React from 'react';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useLayoutEffect } from 'react';
 import { LngContext } from '../utils/context.jsx';
 
 import hommebanner from '/back2.png';
 import profilepic from '/profile.jpg';
 import associacao from '/1909247_1406553006342188_6888766473033194079_o.jpg';
-import pic4 from '/image-maps.png';
+import imageMaps from '/image-maps.png';
 import groupe from '/groupe_7.jpg';
 import favela from '/image-favela2.png';
 
@@ -13,6 +13,7 @@ import aboutData from '../data/about.json';
 import aboutFile from '../data/aboutnew.json';
 import Banner from '../components/Banner.jsx';
 import CTA from '../components/CTA.jsx';
+import TextBox from '../components/TextBox.jsx';
 
 const About = () => {
     const { language } = useContext(LngContext);
@@ -20,6 +21,13 @@ const About = () => {
         (data) => data.title === language
     );
     const aboutSection = aboutFile[0].about[0];
+    const thankSection = aboutFile[0].thanks[0];
+    const comunitySection = aboutFile[0].comunity[0];
+
+    // Start at the top of the page
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    });
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -95,50 +103,20 @@ const About = () => {
                     </div>
                 </div>
             </section>
-            <section className='infos'>
-                <h2 className='hidden'>{section2.subtitle}</h2>
-                <p className='hidden'>{section2.content}</p>
+            <section className='infos hidden'>
+                <TextBox
+                    title={comunitySection.title[language]}
+                    paragraph={comunitySection.content[language]}
+                    color='whiteBack'
+                    imgUrl={imageMaps}
+                />
             </section>
             <section className='infos hidden'>
-                <h2 className='hidden'>{section3.subtitle}</h2>
-                <p className='hidden'>{section3.content}</p>
-                <div className='infosImgFlex'>
-                    <img
-                        className='hidden'
-                        src={favela}
-                        alt='favela maps'
-                    />
-
-                    <div className='legende'>
-                        Photo by{' '}
-                        <a href='http://nephu.sites.uff.br/programa/mapeando-conflitos/mapeando-comunidades/comunidades-do-rio-de-janeiro/indiana/'>
-                            nephu uff
-                        </a>
-                    </div>
-                    <div className='infosImgParallel'>
-                        <div className='infosImg'>
-                            <img
-                                src={favela}
-                                alt='favela maps'
-                            />
-                            <div className='legende'>
-                                Photo by <a href='https://rioonwatch.org.br/?p=10238'>rioonwatch</a>
-                            </div>
-                        </div>
-                        <div className='infosImg'>
-                            <img
-                                src={favela}
-                                alt='favela maps'
-                            />
-                            <div className='legende'>
-                                Photo by <a href='https://rioonwatch.org.br/?p=10238'>rioonwatch</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='infos'>
-                <h2 className='hidden'>{section4.subtitle}</h2>
+                <TextBox
+                    title={thankSection.title[language]}
+                    paragraph={thankSection.content[language]}
+                    color='grayBack'
+                />
             </section>
             <CTA />
         </>

@@ -1,5 +1,8 @@
 .infos {
     padding-block: 3em;
+    @include mobile-only {
+        padding-block: 1.5em;
+    }
     &__content {
         // padding-inline: $layout-padding;
         padding-top: 2em;
@@ -57,6 +60,9 @@
     }
     &__txt {
         margin-inline: 3em;
+        @include mobile-only {
+            margin-inline: 1.5em;
+        }
     }
 }
 

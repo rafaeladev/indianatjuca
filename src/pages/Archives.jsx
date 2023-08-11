@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useLayoutEffect } from 'react';
 import { LngContext } from '../utils/context.jsx';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,11 @@ import CTA from '../components/CTA.jsx';
 
 const Historico = () => {
     const { language } = useContext(LngContext);
+    // Start at the top of the page
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
     const cardElements = archives.map((data) => {
         return (
             <li

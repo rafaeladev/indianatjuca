@@ -9,13 +9,12 @@
     padding: 6px;
     z-index: 100;
     cursor: pointer;
-    background-color: $color-white;
+    background-color: transparent;
 
     @include mobile-only {
         display: flex;
     }
     &:hover {
-        background-color: lighten($color-white, 10%);
         color: white;
     }
     &__menu {

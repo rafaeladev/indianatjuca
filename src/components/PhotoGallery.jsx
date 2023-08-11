@@ -7,6 +7,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
 
+import useKeypress from 'react-use-keypress';
+
 const PhotoGallery = (props) => {
     const [file, setFile] = useState({ name: null, number: null });
     let namePic = [];
@@ -50,6 +52,19 @@ const PhotoGallery = (props) => {
             number: file.number === props.data.length - 1 ? 0 : file.number - 1,
         }));
     };
+
+    useKeypress(['ArrowLeft', 'ArrowRight'], (event) => {
+        if (event.key === 'ArrowLeft') {
+            prevPhoto();
+        } else {
+            nextPhoto();
+        }
+    });
+
+    useKeypress('Escape', () => {
+        // Do something when the user has pressed the Escape key
+        setFile(() => ({ name: null, number: null }));
+    });
 
     return (
         <>

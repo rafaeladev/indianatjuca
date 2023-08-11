@@ -1,7 +1,7 @@
-import React from 'react';
-import { Navigate, useParams, useLoaderData } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { useParams, useLoaderData } from 'react-router-dom';
 import PhotoGallery from '../components/PhotoGallery.jsx';
-import { useFetch, getPhotos } from '../apiGoogle.js';
+import { getPhotos } from '../apiGoogle.js';
 import Banner from '../components/Banner.jsx';
 
 export async function loader({ params }) {
@@ -11,6 +11,11 @@ export async function loader({ params }) {
 const Natal = () => {
     const params = useParams();
     const natalYear = params.id;
+    // Start at the top of the page
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
     // const { isLoading, data, error } = useFetch(`Natal${natalYear}`);
     const currentNatal = useLoaderData();
 

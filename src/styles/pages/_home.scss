@@ -64,10 +64,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 5em;
-    grid-template-rows: repeat(2, minmax(300px, 0.5fr));
+    grid-auto-rows: minmax(400px, 0.5fr);
     @include mobile-only {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, minmax(300px, 1fr));
     }
     & a {
         overflow: hidden;

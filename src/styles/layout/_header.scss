@@ -11,6 +11,10 @@
     background-color: $color-white;
     z-index: 100;
     justify-content: center;
+    @include mobile-only {
+        flex-direction: row;
+        justify-content: space-between;
+    }
     &--color-change {
         background-color: $color-gray;
     }

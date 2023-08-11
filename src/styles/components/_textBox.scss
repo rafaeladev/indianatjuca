@@ -1,0 +1,19 @@
+.textBox {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    @include mobile-only {
+        padding: 1.5em;
+    }
+    &--grayBack {
+        background-color: $color-gray;
+    }
+    &--whiteBack {
+        background-color: $color-white;
+    }
+    & p {
+        margin-block: 1em;
+    }
+}

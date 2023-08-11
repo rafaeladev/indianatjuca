@@ -13,7 +13,6 @@ const Banner = (props) => {
         overflow: 'hidden',
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '80px',
     };
     const homeBanner = {
         fontWeight: 'bold',
@@ -26,8 +25,7 @@ const Banner = (props) => {
         width: '880px',
         gridColumn: '1 / -1',
         backgroundColor: '#c2c2cc',
-        marginTop: '180px',
-        marginBottom: '90px',
+        marginBlock: '90px',
         padding: '40px',
     };
     const banner = {
