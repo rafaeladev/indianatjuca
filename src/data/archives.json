@@ -1,7 +1,7 @@
 [
     {
         "id": "2022",
-        "urlImg": "natal/natal2022/portrait_6.webp",
+        "urlImg": "/natal/natal2022/portrait_6.webp",
         "backColor": "orange",
         "title": { "BR": "Natal 2022", "EN": "Christmas 2022", "FR": "Nöel 2022" },
         "flex":null,
@@ -14,11 +14,24 @@
     },
     {
         "id": "2020",
-        "urlImg": "natal/natal2020/portrait_01.jpeg",
+        "urlImg": "/natal/natal2020/portrait_01.jpeg",
         "backColor": "green",
         "title": { "BR": "Natal 2020", "EN": "Christmas 2020", "FR": "Nöel 2020" },
         "flex":null,
         "align":null,
+        "text": {
+            "BR": "O terceiro ano do projeto modesto e ocorreu no começo da pandemia do codiv-19.",
+            "EN": "The third year of the modest project took place at the beginning of the codiv-19 pandemic.",
+            "FR": "La troisième année du modeste projet s'est déroulée au début de la pandémie de codiv-19."
+        }
+    },
+    {
+        "id": "2019",
+        "urlImg": "/natal/natal2019/portrait_18.jpg",
+        "backColor": "gray",
+        "title": { "BR": "Natal 2019", "EN": "Christmas 2019", "FR": "Nöel 2019" },
+        "flex": "reverse",
+        "align":"right",
         "text": {
             "BR": "O natal 2020 foi o primeiro ano em que pedimos ajuda dos nossos amigos pelo site para organizar.",
             "EN": "Christmas 2020 was the first year we asked our friends for help on the website to organize.",
@@ -26,21 +39,8 @@
         }
     },
     {
-        "id": "2019",
-        "urlImg": "natal/natal2019/portrait_18.jpg",
-        "backColor": "gray",
-        "title": { "BR": "Natal 2019", "EN": "Christmas 2019", "FR": "Nöel 2019" },
-        "flex": "reverse",
-        "align":"right",
-        "text": {
-            "BR": "O natal 2019 foi o segundo ano do projeto e tivemos a visita do papai noel.",
-            "EN": "Christmas 2019 was the second year of the project and we had a visit from Santa Claus.",
-            "FR": "Le noël 2019 était la deuxième année du projet et nous avons eu la visite du Père Noël."
-        }
-    },
-    {
         "id": "2018",
-        "urlImg": "natal/natal2018/portrait_5.jpg",
+        "urlImg": "/natal/natal2018/portrait_5.jpg",
         "backColor": "red",
         "title": { "BR": "Natal 2018", "EN": "Christmas 2018", "FR": "Nöel 2018" },
         "flex": "reverse",

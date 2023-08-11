@@ -1,0 +1,40 @@
+[
+    {
+        "year": "2019",
+        "content": {
+            "paragraph1": {
+                "BR": "Em 2019, foi realizada a primeira vaquinha que fizemos pelo Paypal. Eu pude convidar as pessoas em torno de mim para participarem contribuindo.",
+                "EN": "In 2019, we made the first Paypal pool. It made it possible for the people around me to contribute to this event.",
+                "FR": "En 2019, la première cagnotte Paypal a été réalisée. Elle a permis à mon entourage de contribuer à cet évènement."
+            },
+            "paragraph2": {
+                "BR": "Esse ano foi muito importante porque : ",
+                "EN": "This first year was important because:",
+                "FR": "Cette première année fut importante car :"
+            },
+            "list": "true",
+            "listItems": [
+                {
+                    "BR": "Eu percebi que ajudar as crianças tocava no coração das pessoas ao meu redor e que elas ficavam tão felizes quanto eu de participar.",
+                    "EN": "I realized that helping children for christmas was something that speaks to the heart of the people around me and that they were as happy as I am to participate.",
+                    "FR": "J'ai réalisé qu'aider les enfants pour noël touchait le cœur des gens autour de moi et qu'ils étaient aussi heureux que moi de participer."
+                },
+                {
+                    "BR": "As crianças receberam ajuda internacional (como a coleta foi feita na França aonde eu moro) e assim, muitas pessoas puderam participar.",
+                    "EN": "The event received international help (the collection being made where I live, in France), many people from France participated.",
+                    "FR": "L'évènement a reçu une aide à l'internationale (car la collecte a été faite là où je vis, en France), de nombreuses personnes de France ont participé."
+                }
+            ],
+            "paragraph5": {
+                "BR": "Graças a essas pessoas, nós fomos capazes de organizar mais um ano de Festa de natal, com presentes suficientes para as 127 crianças. Muito obrigado aos meus amigos por esse ano tão especial.",
+                "EN": "Thanks to these people, we were able to organize in 2019 another Christmas party, with enough gifts for the 127 children. Many thanks to my friends for this very special year.",
+                "FR": "Grâce à ces personnes, nous avons pu organiser en 2019 une nouvelle fête de Noël, avec suffisamment de cadeaux pour les 127 enfants. Un grand merci à mes amis pour cette année très spéciale."
+            },
+            "paragraph6": {
+                "BR": "Foi também graças a vocês que esse site pode ser construido!",
+                "EN": "Thanks to you we made this website!",
+                "FR": "C'est grâce à vous que l'on a créé ce site !"
+            }
+        }
+    }
+]

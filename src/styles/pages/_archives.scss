@@ -1,18 +1,24 @@
 .archives {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: 500px;
     grid-auto-flow: dense;
     grid-gap: 1em;
     margin-block: 3em;
     padding-inline: $layout-padding;
+    &--maxi {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-auto-rows: 500px;
+    }
+    &--mini {
+        grid-auto-rows: 450px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
     & h2 {
         color: $color-white;
         text-align: center;
         position: absolute;
         width: 260px;
         height: 70px;
-        top: calc(50% - 35px);
+        top: calc(250px - 35px);
         left: calc(50% - 130px);
     }
     @include mobile-only {
@@ -33,25 +39,31 @@
 }
 
 .card-img {
-    background-size: cover;
+    object-fit: cover;
     background-position: center center;
     scale: 1;
     transition: all 0.2s ease-in;
     width: 100%;
     height: 100%;
     filter: blur(0px);
-
-    &:hover {
-        transform: scale(1.1);
-        filter: blur(2px);
-    }
 }
 
 .card-item {
     cursor: pointer;
     overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .card-link {
     position: relative;
+    display: flex;
+    height: 100%;
+
+    &:hover {
+        & img {
+            transform: scale(1.1);
+            filter: blur(2px);
+        }
+    }
 }

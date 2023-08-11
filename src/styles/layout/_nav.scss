@@ -1,8 +1,9 @@
 .nav {
     display: flex;
-
+    margin-inline: auto;
     &__desktop {
         gap: 50px;
+        width: 100%;
 
         padding-block: 0.5em;
         @include mobile-only {
@@ -80,7 +81,7 @@
         background-color: $color-salmon;
     }
     &__lang {
-        margin-inline: auto;
+        display: inline-block;
     }
 }
 

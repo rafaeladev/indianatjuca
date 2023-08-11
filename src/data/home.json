@@ -11,7 +11,8 @@
             "action": "Clique aqui para participar do natal 2023"
         },
         "name": "Natal",
-        "pic":"https://zupimages.net/up/23/14/fq08.png"
+        "pic":"https://zupimages.net/up/23/14/fq08.png",
+        "endPage":["Vem conferir as", "fotos", "dos", "natais", "anteriores"]
     },
     {
         "id": "2",
@@ -25,7 +26,8 @@
             "action": "Cliquez ici participer au Noël 2023"
         },
         "name": "Noël",
-        "pic":"https://zupimages.net/up/23/14/pldu.png"
+        "pic":"https://zupimages.net/up/23/14/pldu.png",
+        "endPage":["Venez découvrir les", "photos", "des", "noëls", "précédents"]
     },
     {
         "id": "3",
@@ -39,6 +41,7 @@
             "action": "Click here to participate in 2023's christmas"
         },
         "name": "Christmas",
-        "pic":"https://zupimages.net/up/23/14/79hr.png"
+        "pic":"https://zupimages.net/up/23/14/79hr.png",
+        "endPage":["Come check out the", "photos", "from", "previous", "Christmas"]
     }
 ]

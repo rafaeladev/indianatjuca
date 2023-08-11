@@ -1,6 +1,5 @@
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import leftArrow from '/leftArrow.png';
 import rightArrow from '/rightArrow.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';

@@ -35,10 +35,34 @@ h2 {
     }
 }
 
+h2 {
+    font-size: 1.5rem;
+}
+
 span {
     font-size: 0.7rem;
     color: $color-white;
 }
 p {
     margin: 0;
+}
+
+.colortext {
+    &--piment {
+        color: $color-piment;
+    }
+    &--orange {
+        color: $color-salmon;
+    }
+    &--white {
+        color: $color-white;
+    }
+}
+
+.bordertext {
+    &--orange {
+        border-left: 10px solid $color-salmon;
+        padding: 1em;
+        // text-align: center;
+    }
 }

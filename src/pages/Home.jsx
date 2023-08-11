@@ -14,11 +14,10 @@ import { Link } from 'react-router-dom';
 import HomePhotos from '../components/HomePhotos.jsx';
 
 const Home = () => {
-    const titleRef = useRef();
     const { language } = useContext(LngContext);
     const years = [2018, 2019, 2022, 2023];
     const yearsSize = years.length;
-    const { h2, content, content2, content3, subtitles, name } = contentData.find(
+    const { h2, content, content2, content3, subtitles, endPage } = contentData.find(
         (data) => data.title === language
     );
 
@@ -102,11 +101,11 @@ const Home = () => {
                         </Link>
                     </div>
                     <h2 className='homeContent__title homeContent--margin homeContent--article'>
-                        <>Vem conferir as</>
-                        <i className='homeContent--green homeContent--display'>fotos</i>
-                        <>dos</>
-                        <i className='homeContent--orange homeContent--display'>natais</i>
-                        <>anteriores</>
+                        <>{endPage[0]}</>
+                        <i className='homeContent--green homeContent--display'>{endPage[1]}</i>
+                        <>{endPage[2]}</>
+                        <i className='homeContent--orange homeContent--display'>{endPage[3]}</i>
+                        <>{endPage[4]}</>
                     </h2>
                 </section>
                 <ul className='homePhotosSection'>{cardElements}</ul>

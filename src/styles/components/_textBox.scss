@@ -1,9 +1,13 @@
 .textBox {
-    padding: 3em;
+    padding-inline: 3em;
+    padding-top: 3em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     // align-items: center;
+    &--block {
+        padding-bottom: 3em;
+    }
     @include mobile-only {
         padding: 1.5em;
     }
@@ -13,7 +17,21 @@
     &--whiteBack {
         background-color: $color-white;
     }
+
+    &--orangeBack {
+        background-color: $color-salmon;
+    }
     & p {
         margin-block: 1em;
+    }
+    & ul {
+        & li {
+            list-style-type: disc;
+            margin-left: 2em;
+            margin-bottom: 0.5em;
+        }
+    }
+    & h3 {
+        color: $color-green;
     }
 }

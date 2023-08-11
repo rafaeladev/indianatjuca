@@ -26,12 +26,12 @@ const Historico = () => {
                     className='card-link'
                     to={`/natal/${data.id}`}
                 >
-                    <div
+                    <img
                         className='card-img'
-                        style={{
-                            backgroundImage: `url(${data.urlImg})`,
-                        }}
-                    ></div>
+                        src={data.urlImg}
+                        alt={data.title[language]}
+                    />
+
                     <h2>{data.title[language]}</h2>
                 </Link>
             </li>
@@ -46,7 +46,7 @@ const Historico = () => {
                 title={language === 'BR' ? 'Arquivos' : language === 'FR' ? 'Archives' : 'Arquives'}
             />
             <section>
-                <ul className='archives'>{cardElements}</ul>
+                <ul className='archives archives--maxi'>{cardElements}</ul>
             </section>
             <CTA />
         </>

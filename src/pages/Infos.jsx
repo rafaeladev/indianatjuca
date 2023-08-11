@@ -25,9 +25,9 @@ const About = () => {
     const comunitySection = aboutFile[0].comunity[0];
 
     // Start at the top of the page
-    useLayoutEffect(() => {
-        window.scrollTo(0, 0);
-    });
+    // useLayoutEffect(() => {
+    //     window.scrollTo(0, 0);
+    // });
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -111,7 +111,7 @@ const About = () => {
                     imgUrl={imageMaps}
                 />
             </section>
-            <section className='infos hidden'>
+            <section className='infos homeContent hidden'>
                 <TextBox
                     title={thankSection.title[language]}
                     paragraph={thankSection.content[language]}
