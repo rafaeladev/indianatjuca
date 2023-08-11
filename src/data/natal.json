@@ -1,7 +1,8 @@
 [
     {
         "year": "2019",
-        "content": {
+        "sections": 2,
+        "content1": {
             "paragraph1": {
                 "BR": "Em 2019, foi realizada a primeira vaquinha que fizemos pelo Paypal. Eu pude convidar as pessoas em torno de mim para participarem contribuindo.",
                 "EN": "In 2019, we made the first Paypal pool. It made it possible for the people around me to contribute to this event.",
@@ -12,7 +13,7 @@
                 "EN": "This first year was important because:",
                 "FR": "Cette première année fut importante car :"
             },
-            "list": "true",
+            "list": true,
             "listItems": [
                 {
                     "BR": "Eu percebi que ajudar as crianças tocava no coração das pessoas ao meu redor e que elas ficavam tão felizes quanto eu de participar.",
@@ -34,6 +35,43 @@
                 "BR": "Foi também graças a vocês que esse site pode ser construido!",
                 "EN": "Thanks to you we made this website!",
                 "FR": "C'est grâce à vous que l'on a créé ce site !"
+            }
+        },
+        "content2": {
+            "text": {
+                "BR": "As vezes o Papai Noel pode ser assustador 🤷🏽",
+                "EN": "Sometimes Santa Claus can be intimidating 😄",
+                "FR": " Parfois le père noël est intimidant 🙈"
+            }
+        }
+    },
+    {
+        "year": "2022",
+        "sections": 2,
+        "content1": {
+            "paragraph1": {
+                "BR": "Em 2022, eu estava no Brasil e pude participar da organização.",
+                "EN": "In 2022, I was in Brazil and was able to participate in the organization.",
+                "FR": "En 2022, j'étais au Brésil et j'ai pu participer à l'organisation."
+            },
+            "paragraph2": {
+                "BR": "Neste ano tomamos a decisão de ajudar não so as crianças, mas também as familias com a doação de alimentos basicos.",
+                "EN": "This year we decided to help not only the children, but also the families with the donation of basic foodstuffs.",
+                "FR": "Cette année, nous avons décidé d'aider non seulement les enfants, mais aussi les familles avec le don de denrées alimentaires de base."
+            },
+            "list": false,
+            "paragraph5": "",
+            "paragraph6": {
+                "BR": "Mais uma vez, obrigada à todos que participaram!",
+                "EN": "Once again, thank you to everyone who participated!",
+                "FR": "Encore une fois, merci à tous ceux qui ont participé !"
+            }
+        },
+        "content2": {
+            "text": {
+                "BR": "Fotos das pessoas recebendo as cestas basicas",
+                "EN": "Photos of people receiving basic food baskets",
+                "FR": "Photos de personnes recevant des paniers alimentaires de base"
             }
         }
     }

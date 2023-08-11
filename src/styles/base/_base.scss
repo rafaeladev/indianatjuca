@@ -87,6 +87,7 @@ main {
     align-items: center;
     background-color: #ffffff;
     margin-top: 144px;
+    margin-bottom: 5em;
     @include mobile-only {
         margin-top: 80px;
     }

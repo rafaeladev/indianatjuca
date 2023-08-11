@@ -24,12 +24,10 @@
     & p {
         margin-block: 1em;
     }
-    & ul {
-        & li {
-            list-style-type: disc;
-            margin-left: 2em;
-            margin-bottom: 0.5em;
-        }
+    &__list {
+        list-style-type: disc;
+        margin-left: 2em;
+        margin-bottom: 0.5em;
     }
     & h3 {
         color: $color-green;

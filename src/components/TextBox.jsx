@@ -16,8 +16,8 @@ const TextBox = (props) => {
                     alt={props.title}
                 />
             )}
-            {props.list && <ul>{props.listItems}</ul>}
-            <h3>{props.text2 && props.text2}</h3>
+            {props.list === true ? <ul>{props.listItems}</ul> : null}
+            <h3>{props.text && props.text}</h3>
             <h2>{props.title2 && props.title2}</h2>
         </div>
     );
