@@ -26,13 +26,13 @@ const PhotoGallery = (props) => {
             >
                 <LazyLoadImage
                     key={photo.name}
-                    src={`/natal/natal${props.year}/${photo.name}.${props.format}`}
+                    src={`/natal/natal${props.year}/${photo.name}_medium.${props.format}`}
                     alt={`${photo.id}`}
                     className='galleryImg'
                     // height={500}
                     // width={333}
                     effect='blur'
-                    placeholderSrc={`/natal/natal${props.year}/${photo.name}.${props.format}`}
+                    placeholderSrc={`/natal/natal${props.year}/${photo.name}_low.${props.format}`}
                 />
             </div>
         );
@@ -75,7 +75,7 @@ const PhotoGallery = (props) => {
                 <span onClick={() => setFile(() => ({ name: null, number: null }))}>&times;</span>
                 {file.name != null ? (
                     <img
-                        src={`/natal/natal${props.year}/${file.name}.${props.format}`}
+                        src={`/natal/natal${props.year}/${file.name}_high.${props.format}`}
                         alt={`${file.number}`}
                         className='popup-media__photo'
                     />

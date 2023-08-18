@@ -9,7 +9,6 @@ import imageMaps from '/image-maps.png';
 import groupe from '/groupe_7.jpg';
 import favela from '/image-favela2.png';
 
-import aboutData from '../data/about.json';
 import aboutFile from '../data/aboutnew.json';
 import Banner from '../components/Banner.jsx';
 import CTA from '../components/CTA.jsx';
@@ -17,17 +16,14 @@ import TextBox from '../components/TextBox.jsx';
 
 const About = () => {
     const { language } = useContext(LngContext);
-    const { section1, section2, section3, section4 } = aboutData.find(
-        (data) => data.title === language
-    );
     const aboutSection = aboutFile[0].about[0];
     const thankSection = aboutFile[0].thanks[0];
     const comunitySection = aboutFile[0].comunity[0];
 
     // Start at the top of the page
-    // useLayoutEffect(() => {
-    //     window.scrollTo(0, 0);
-    // });
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    });
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -56,22 +52,23 @@ const About = () => {
                         : 'About us'
                 }
             />
-            <section className='infos'>
+            <section className='infos homeContent'>
                 <div className='infos__content'>
                     <div className='infos__grid'>
-                        <div className='infos__content__profile  hidden'>
+                        <div className='infos__content__profile '>
                             <img
                                 src={profilepic}
                                 alt='Maria do Socorro'
+                                className='hidden'
                             />
                             <span className='infos__caption'>Maria do Socorro</span>
                         </div>
 
-                        <div className='infos__txt  hidden'>
-                            <p>{aboutSection.paragraph1[language]}</p>
-                            <p>{aboutSection.paragraph2[language]}</p>
-                            <p>{aboutSection.paragraph3[language]}</p>
-                            <p>{aboutSection.paragraph4[language]}</p>
+                        <div className='infos__txt'>
+                            <p className='hidden'>{aboutSection.paragraph1[language]}</p>
+                            <p className='hidden'>{aboutSection.paragraph2[language]}</p>
+                            <p className='hidden'>{aboutSection.paragraph3[language]}</p>
+                            <p className='hidden'>{aboutSection.paragraph4[language]}</p>
                         </div>
                     </div>
                     <div className='infos__grid'>
@@ -103,7 +100,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
-            <section className='infos hidden'>
+            <section className='infos homeContent hidden'>
                 <TextBox
                     title={comunitySection.title[language]}
                     paragraph={comunitySection.content[language]}

@@ -12,8 +12,12 @@
     z-index: 100;
     justify-content: center;
     @include mobile-only {
+        width: 100%;
         flex-direction: row;
         justify-content: space-between;
+        padding: 1em;
+
+        gap: 1em;
     }
     &--color-change {
         background-color: $color-gray;

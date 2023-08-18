@@ -7,7 +7,12 @@ const TextBox = (props) => {
     };
     return (
         <div className={`textBox textBox--${props.color} textBox--block`}>
-            <h2 style={styleText}>{props.title}</h2>
+            <h2
+                style={styleText}
+                className={'js-splitText js-text-effect'}
+            >
+                {props.title}
+            </h2>
             {props.subtitle && <h3>{props.subtitle}</h3>}
             {props.paragraph && <p style={styleText}>{props.paragraph}</p>}
             {props.imgUrl && (

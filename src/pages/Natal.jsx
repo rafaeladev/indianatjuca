@@ -7,6 +7,7 @@ import TextBox from '../components/TextBox.jsx';
 import natalContent from '../data/natal.json';
 import { useContext } from 'react';
 import { LngContext } from '../utils/context.jsx';
+import PhotoGalleryReduc from '../components/PhotoGalleryReduc.jsx';
 
 export async function loader({ params }) {
     return getPhotos(`Natal${params.id}`);
@@ -20,9 +21,9 @@ const Natal = () => {
     let totalSections = null;
     let listItems = null;
     // Start at the top of the page
-    // useLayoutEffect(() => {
-    //     window.scrollTo(0, 0);
-    // });
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    });
 
     const natalPageText = natalContent.find((data) => data.year === natalYear);
 
@@ -68,14 +69,12 @@ const Natal = () => {
                     />
                 )}
             </section>
-            <section>
+            <section className='homeContent'>
                 <div className='container container--margin'>
                     <PhotoGallery
                         data={childrenPhotos ? childrenPhotos : currentNatal}
                         year={natalYear}
-                        format={
-                            natalYear === '2022' ? 'webp' : natalYear === '2020' ? 'jpeg' : 'jpg'
-                        }
+                        format={'webp'}
                     />
                 </div>
             </section>
@@ -95,13 +94,7 @@ const Natal = () => {
                             <PhotoGallery
                                 data={otherPhotos}
                                 year={natalYear}
-                                format={
-                                    natalYear === '2022'
-                                        ? 'webp'
-                                        : natalYear === '2020'
-                                        ? 'jpeg'
-                                        : 'jpg'
-                                }
+                                format={'webp'}
                             />
                         </div>
                     </section>

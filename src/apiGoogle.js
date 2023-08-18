@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 //Lien vers les API google
 const apiGoogle =
-    'https://script.google.com/macros/s/AKfycbw5F1XQW-mQHffDhqQe7sOSYAXvUe7z2Y8YYSs7Uvnwi9mS_wADqWnRZGpt6iZXM1hE/exec';
+    'https://script.google.com/macros/s/AKfycbzD6aSuzfxk343kPhbm-1QX9dtX_2GSZfBtL3B1-ma0hQqqTMsW5cethZILP66UmulF/exec';
 
 export async function getPhotos(id) {
     const url = `${apiGoogle}?action=get${id}`;
@@ -19,6 +19,22 @@ export async function getPhotos(id) {
     const photos = await res.json();
 
     return photos;
+}
+
+export async function getLoading() {
+    const url = `${apiGoogle}?action=getLoading`;
+    const res = await fetch(url);
+
+    if (!res.ok) {
+        throw {
+            message: 'Failed to fetch vans',
+            statusText: res.statusText,
+            status: res.status,
+        };
+    }
+    const data = await res.json();
+
+    return data;
 }
 
 export default function getData(id) {

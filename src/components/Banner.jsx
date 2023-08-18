@@ -46,6 +46,7 @@ const Banner = (props) => {
                 {props.page === 'home' ? null : (
                     <div className='bannerTitle'>
                         <h1>{props.title && props.title}</h1>
+                        <h1>{props.title && props.title}</h1>
                     </div>
                 )}
                 {props.page === 'home' ? null : (

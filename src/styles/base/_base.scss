@@ -20,6 +20,9 @@ html {
     height: 100vh;
     background-color: $color-white;
     max-width: 2560px;
+    @include mobile-only {
+        align-items: center;
+    }
 }
 
 body {

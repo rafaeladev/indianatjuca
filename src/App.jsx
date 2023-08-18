@@ -16,7 +16,7 @@ import About from './pages/Infos.jsx';
 import Natal, { loader as natalPageLoader } from './pages/Natal.jsx';
 import NatalLayout from './components/NatalLayout.jsx';
 import AppWrapper from './components/AppWrapper.jsx';
-import NatalLoading from './components/NatalLoading.jsx';
+import NatalLoading, { loader as natalLoadingPageLoader } from './components/NatalLoading.jsx';
 import Error from './components/Error.jsx';
 
 const App = () => {
@@ -51,6 +51,8 @@ const App = () => {
                         />
                         <Route
                             path='loading'
+                            loader={natalLoadingPageLoader}
+                            errorElement={<Error />}
                             element={<NatalLoading />}
                         />
                     </Route>

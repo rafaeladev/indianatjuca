@@ -17,6 +17,7 @@
     max-width: 1440px;
     @include mobile-only {
         padding-inline: 1em;
+        margin-top: 1em;
     }
     &--margin {
         padding-block: 20px;
@@ -29,6 +30,9 @@
         color: $color-piment;
         font-family: $font-1;
         font-size: 2rem;
+        @include mobile-only {
+            font-size: 1.5rem;
+        }
     }
     &--orange {
         padding-inline: 0.3em;

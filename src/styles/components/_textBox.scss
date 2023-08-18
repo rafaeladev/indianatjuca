@@ -4,12 +4,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
     // align-items: center;
     &--block {
         padding-bottom: 3em;
     }
     @include mobile-only {
-        padding: 1.5em;
+        padding: 1em;
     }
     &--grayBack {
         background-color: $color-gray;

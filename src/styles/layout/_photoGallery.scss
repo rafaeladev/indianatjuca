@@ -9,22 +9,33 @@
 
 .photoGallery {
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    @include tablette-only {
+        justify-content: center;
+    }
+    @include mobile-only {
+        justify-content: center;
+    }
     &__horizontal {
         width: 100%;
-        grid-column: span 2;
+        height: 100%;
+        // grid-column: span 2;
         overflow: hidden;
         & img {
             width: 100%;
+            height: 100%;
             object-fit: cover;
             overflow: hidden;
         }
     }
 
     &__vertical {
-        justify-content: center;
         overflow: hidden;
+        align-items: flex-start;
         // grid-row: span 2;
         position: relative;
+        height: 100%;
         & img {
             width: 100%;
             object-fit: cover;
@@ -52,6 +63,12 @@
     background: rgba(0, 0, 0, 1);
     width: 100%;
     height: 100%;
+    &__display {
+        display: block;
+    }
+    &__notdisplay {
+        display: none;
+    }
     &__photo {
         position: absolute;
         top: 50%;

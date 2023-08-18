@@ -12,7 +12,7 @@ const CTA = () => {
     return (
         <div className='cta'>
             <div className='homeContent__actions '>
-                <Link to={`natal/${years[yearsSize - 1]}`}>
+                <Link to={`/natal/loading`}>
                     <button className='buttonNow'>{subtitles.action}</button>
                 </Link>
             </div>
