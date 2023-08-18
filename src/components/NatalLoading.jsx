@@ -21,7 +21,7 @@ const NatalLoading = () => {
         if (loadingData[i].key === `paragraph_${i + 1}`) {
             paragraph = [
                 ...paragraph,
-                loadingData[i] === 'FR' ? (
+                language === 'FR' ? (
                     <p key={loadingData[i].key}>{loadingData[i].FR}</p>
                 ) : language === 'EN' ? (
                     <p key={loadingData[i].key}>{loadingData[i].EN}</p>
@@ -32,7 +32,7 @@ const NatalLoading = () => {
         }
         if (loadingData[i].key === `title_h3`) {
             subtitle =
-                loadingData[i] === 'FR'
+                language === 'FR'
                     ? loadingData[i].FR
                     : language === 'EN'
                     ? loadingData[i].EN
@@ -40,7 +40,7 @@ const NatalLoading = () => {
         }
         if (loadingData[i].key === `paragraph_6`) {
             paragraph_6 =
-                loadingData[i] === 'FR'
+                language === 'FR'
                     ? loadingData[i].FR
                     : language === 'EN'
                     ? loadingData[i].EN
