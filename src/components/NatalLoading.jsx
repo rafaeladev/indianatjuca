@@ -59,7 +59,7 @@ const NatalLoading = () => {
         language === 'BR'
             ? `Participações à partir de novembro 2023!`
             : language === 'FR'
-            ? `Participações à partir de novembre 2023!`
+            ? `Participations à partir de novembre 2023!`
             : `Participations from November 2023!`;
     return (
         <>
