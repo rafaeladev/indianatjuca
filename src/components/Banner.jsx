@@ -43,12 +43,16 @@ const Banner = (props) => {
     return (
         <div style={banner}>
             <div style={classStyle}>
-                {props.page === 'home' ? null : (
+                {/* {props.page === 'home' ? null : (
                     <div className='bannerTitle'>
                         <h1>{props.title && props.title}</h1>
                         <h1>{props.title && props.title}</h1>
                     </div>
-                )}
+                )} */}
+                <div className='bannerTitle'>
+                    <h1>{props.title && props.title}</h1>
+                    <h1>{props.title && props.title}</h1>
+                </div>
                 {props.page === 'home' ? null : (
                     <img
                         className='bannerImg'

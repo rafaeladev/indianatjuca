@@ -80,6 +80,7 @@ const Home = () => {
             <Banner
                 img={hommebanner}
                 page={'home'}
+                title={'Indiana Tijuca'}
             />
             <div className='home'>
                 <section className='homeContent'>

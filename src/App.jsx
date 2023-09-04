@@ -18,6 +18,7 @@ import NatalLayout from './components/NatalLayout.jsx';
 import AppWrapper from './components/AppWrapper.jsx';
 import NatalLoading, { loader as natalLoadingPageLoader } from './components/NatalLoading.jsx';
 import Error from './components/Error.jsx';
+import CollapsePage from './pages/CollapsePage.jsx';
 
 const App = () => {
     const router = createBrowserRouter(
@@ -60,6 +61,10 @@ const App = () => {
                     <Route
                         path='infos'
                         element={<About />}
+                    />
+                    <Route
+                        path='collapse'
+                        element={<CollapsePage />}
                     />
                     <Route
                         path='*'

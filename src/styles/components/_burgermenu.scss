@@ -1,12 +1,18 @@
+$block-width: 2rem;
+$block-height: 2rem;
+$bar-height: 0.2rem;
+$block-padding: 0rem;
+$x: 0.146;
+
 .hamburger {
-    width: 3rem;
-    height: 3rem;
+    width: $block-width;
+    height: $block-height;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
     align-items: center;
     border-radius: 12px;
-    padding: 6px;
+    padding: $block-padding;
     z-index: 100;
     cursor: pointer;
     background-color: transparent;
@@ -51,21 +57,21 @@
 
 .bar {
     width: 100%;
-    height: 0.3rem;
+    height: $bar-height;
     border-radius: 10px;
     background-color: $color-piment;
     transform-origin: 1px;
-    transition: all 0.3s linear;
+    transition: 0.425s cubic-bezier(0.445, 0.05, 0.015, 1);
     transform: rotate(0);
     margin-inline: auto;
     text-align: center;
     align-items: center;
 
     &--open-1 {
-        transform: rotate(45deg);
+        transform: translateX($block-width * $x) rotate(45deg);
     }
     &--closed-1 {
-        transform: rotate(45deg);
+        transform: translateX(0) rotate(0);
     }
     &--open-2 {
         opacity: 0;
@@ -74,9 +80,9 @@
         opacity: 1;
     }
     &--open-3 {
-        transform: rotate(-45deg);
+        transform: translateX($block-width * $x) rotate(-45deg);
     }
     &--closed-3 {
-        transform: rotate(0);
+        transform: rotate(0) translateX(0);
     }
 }

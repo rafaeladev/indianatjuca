@@ -39,7 +39,7 @@ const Header = (props) => {
                         alt='logo'
                     />
 
-                    <p>Natal Indiana Tijuca</p>
+                    <p>Indiana Tijuca</p>
                 </Link>
             </div>
             <div className='nav nav__desktop'>
