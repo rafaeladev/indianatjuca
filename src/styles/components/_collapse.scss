@@ -68,7 +68,7 @@
             color: $color-white;
             background: $color-green;
             & a {
-                color: $color-white;
+                // color: $color-white;
                 position: relative;
 
                 &:hover {
@@ -114,8 +114,16 @@
     color: $color-salmon;
     font-weight: bold;
     span {
+        color: $color-salmon;
         &::after {
             width: 100%;
         }
     }
+    & li {
+        color: $color-salmon;
+    }
+}
+
+.normal {
+    color: $color-white;
 }

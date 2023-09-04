@@ -23,13 +23,14 @@ const Collapse = (props) => {
                 key={index}
                 aria-hidden={toggle ? 'true' : 'false'}
             >
-                <Link
+                <NavLink
                     key={index}
                     to={`${props.link}/${element}`}
-                    onClick={toggleState}
+                    className={({ isActive }) => (isActive ? 'active ' : 'normal')}
+                    // onClick={toggleState}
                 >
                     {element}
-                </Link>
+                </NavLink>
             </li>
         );
     });
@@ -38,7 +39,7 @@ const Collapse = (props) => {
         <div
             className='collapse'
             onMouseEnter={toggleState}
-            // onMouseLeave={toggleState}
+            onMouseLeave={toggleState}
         >
             <NavLink
                 className={({ isActive }) =>
