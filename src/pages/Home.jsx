@@ -84,7 +84,7 @@ const Home = () => {
             />
             <div className='home'>
                 <section className='homeContent'>
-                    <h1 className='homeContent--margin'>Indiana Tijuca</h1>
+                    {/* <h1 className='homeContent--margin'>Indiana Tijuca</h1> */}
                     <p>{content2}</p>
                     <p className='homeContent--margin'>{content3}</p>
                     <h2

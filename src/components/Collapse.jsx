@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import Chevron from '/leftArrow.png';
+import { FaAngleLeft } from 'react-icons/fa';
 
-const Collapse = () => {
+const Collapse = (props) => {
     const [toggle, setToggle] = useState(false);
     const [heightEl, setHeightEl] = useState();
 
@@ -14,28 +16,49 @@ const Collapse = () => {
     const toggleState = () => {
         setToggle(!toggle);
     };
-    return (
-        <div className='collapse'>
-            <button
-                className='collapse__visible'
-                onClick={toggleState}
-            >
-                <span>Lorem ipsum dolor sit.</span>
-                <img
-                    className={toggle && 'active'}
-                    src={Chevron}
-                />
-            </button>
 
-            <div
-                className={toggle ? 'collapse__toggle animated' : 'collapse__toggle'}
-                style={{ height: toggle ? `${heightEl}` : '0px' }}
-                ref={refHeight}
+    const collapseElements = props.content.map((element, index) => {
+        return (
+            <li
+                key={index}
+                aria-hidden={toggle ? 'true' : 'false'}
             >
-                <p aria-hidden={toggle ? 'true' : 'false'}>Natal 2022</p>
-                <p aria-hidden={toggle ? 'true' : 'false'}>Natal 2020</p>
-                <p aria-hidden={toggle ? 'true' : 'false'}>Natal 2019</p>
-            </div>
+                <Link
+                    key={index}
+                    to={`${props.link}/${element}`}
+                    onClick={toggleState}
+                >
+                    {element}
+                </Link>
+            </li>
+        );
+    });
+
+    return (
+        <div
+            className='collapse'
+            onMouseEnter={toggleState}
+            // onMouseLeave={toggleState}
+        >
+            <NavLink
+                className={({ isActive }) =>
+                    isActive ? 'active collapse__visible' : 'collapse__visible'
+                }
+                // onMouseLeave={toggleState}
+                to={`/natal`}
+            >
+                <span>{props.title}</span>
+                <FaAngleLeft className={toggle && 'active'} />
+            </NavLink>
+
+            <ul
+                className={toggle ? 'collapse__toggle animated' : 'collapse__toggle'}
+                // style={{ height: toggle ? `${heightEl}` : '0px' }}
+                ref={refHeight}
+                // onMouseLeave={toggleState}
+            >
+                {collapseElements}
+            </ul>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { LngContext } from '../utils/context.jsx';
+import Collapse from './Collapse.jsx';
 
 const ChangeLanguage = () => {
     const { language, selectLanguage } = useContext(LngContext);
@@ -11,7 +12,7 @@ const ChangeLanguage = () => {
     // console.log(language);
 
     return (
-        <div>
+        <>
             <select
                 className='selectBox'
                 onChange={(event) => selectLanguage(event)}
@@ -37,7 +38,7 @@ const ChangeLanguage = () => {
                     EN
                 </option>
             </select>
-        </div>
+        </>
     );
 };
 

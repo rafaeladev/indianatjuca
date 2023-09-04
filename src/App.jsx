@@ -50,14 +50,13 @@ const App = () => {
                             loader={natalPageLoader}
                             errorElement={<Error />}
                         />
-                        <Route
-                            path='loading'
-                            loader={natalLoadingPageLoader}
-                            errorElement={<Error />}
-                            element={<NatalLoading />}
-                        />
                     </Route>
-
+                    <Route
+                        path='loading'
+                        loader={natalLoadingPageLoader}
+                        errorElement={<Error />}
+                        element={<NatalLoading />}
+                    />
                     <Route
                         path='infos'
                         element={<About />}

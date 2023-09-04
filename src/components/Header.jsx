@@ -45,21 +45,8 @@ const Header = (props) => {
             <div className='nav nav__desktop'>
                 <Nav />
             </div>
-            <div
-                className='nav__mobile'
-                onClick={toggleHamburger}
-            >
-                <BurgerMenu
-                    isOpen={hamburgerOpen}
-                    onClick={toggleHamburger}
-                />
-                <div
-                    className={
-                        hamburgerOpen ? 'hamburger__menu hamburger--open' : 'hamburger__menu'
-                    }
-                >
-                    <Nav />
-                </div>
+            <div className='nav__mobile'>
+                <BurgerMenu isOpen={hamburgerOpen} />
             </div>
         </header>
     );

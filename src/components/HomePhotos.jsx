@@ -10,7 +10,10 @@ const HomePhotos = (props) => {
             <picture
                 className={props.flex ? ` homePhotos__img homePhotos--reverse` : ` homePhotos__img`}
             >
-                <img src={props.img} />
+                <img
+                    src={props.img}
+                    alt={props.title}
+                />
             </picture>
 
             <div

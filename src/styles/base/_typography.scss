@@ -5,7 +5,7 @@
 
 * {
     font-family: $font-2;
-    color: $color-green;
+    // color: $color-green;
     font-size: 18px;
     @include mobile-only {
         font-size: 18px;
@@ -24,7 +24,7 @@ h1 {
     font-size: 5rem;
     margin: 0px;
     @include mobile-only {
-        font-size: 2.5rem;
+        font-size: 4rem;
     }
 }
 
@@ -41,7 +41,10 @@ h3 {
 
 span {
     font-size: 0.7rem;
-    color: $color-white;
+    // color: $color-white;
+    // &:hover {
+    //     color: $color-salmon;
+    // }
 }
 p {
     margin: 0;

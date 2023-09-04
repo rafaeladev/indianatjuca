@@ -38,7 +38,7 @@ const Banner = (props) => {
     };
     let classStyle = styleBanner;
     if (props.page === 'home') {
-        classStyle = homeBanner;
+        classStyle = styleBanner;
     }
     return (
         <div style={banner}>

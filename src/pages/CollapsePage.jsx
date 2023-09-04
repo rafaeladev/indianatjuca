@@ -4,7 +4,10 @@ import Collapse from '../components/Collapse.jsx';
 const CollapsePage = () => {
     return (
         <div>
-            <Collapse />
+            <Collapse
+                title={'Arquivos'}
+                content={['Natal 2022', 'Natal 2020', 'Natal 2018']}
+            />
         </div>
     );
 };

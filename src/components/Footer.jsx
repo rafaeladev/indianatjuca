@@ -12,7 +12,8 @@ const Footer = () => {
             <div className='footer__text'>
                 Indiana Tijuca by{' '}
                 <Link
-                    to='/'
+                    to='https://www.rafaeladsdo.com/'
+                    target='_blank'
                     className='footer--link'
                 >
                     Rafaela Oliveira
