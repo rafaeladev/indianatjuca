@@ -110,20 +110,6 @@
         margin-top: 20px;
     }
 }
-
-.hidden {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(100%);
-    transition: all 1s;
-}
-
-.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}
-
 .logo:nth-child(2) {
     transition-delay: 200ms;
 }
