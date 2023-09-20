@@ -7,7 +7,6 @@ import TextBox from '../components/TextBox.jsx';
 import natalContent from '../data/natal.json';
 import { useContext } from 'react';
 import { LngContext } from '../utils/context.jsx';
-import PhotoGalleryReduc from '../components/PhotoGalleryReduc.jsx';
 
 export async function loader({ params }) {
     return getPhotos(`Natal${params.id}`);
@@ -69,7 +68,7 @@ const Natal = () => {
                     />
                 )}
             </section>
-            <section className='homeContent'>
+            <section>
                 <div className='container container--margin'>
                     <PhotoGallery
                         data={childrenPhotos ? childrenPhotos : currentNatal}
