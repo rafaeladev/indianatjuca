@@ -8,6 +8,7 @@ import { getLoading } from '../apiGoogle.js';
 export async function loader() {
     return getLoading();
 }
+import Loader from 'react-loaders';
 
 const NatalLoading = () => {
     const { language } = useContext(LngContext);
@@ -90,6 +91,7 @@ const NatalLoading = () => {
                     </ul>
                 </div>
             </section>
+            <Loader type='pacman' />
         </>
     );
 };

@@ -121,3 +121,10 @@ footer {
 select {
     padding-block: 0px;
 }
+
+.canvasWrapper {
+    height: 300px;
+    width: 50%;
+    pointer-events: auto;
+    touch-action: pan-y;
+}

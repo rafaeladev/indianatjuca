@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import leftArrow from '/leftArrow.png';
 import rightArrow from '/rightArrow.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -14,6 +14,24 @@ import Masonry from '@mui/lab/Masonry';
 const PhotoGallery = (props) => {
     const [file, setFile] = useState({ name: null, number: null });
     let namePic = [];
+    const imgRef = useRef();
+
+    useEffect(() => {
+        const blurDivs = document.querySelectorAll('.blur-load');
+
+        blurDivs.forEach((div) => {
+            const img = document.querySelector('img');
+
+            function loaded() {
+                div.classList.add('loaded');
+            }
+            if (img.complete) {
+                loaded();
+            } else {
+                img.addEventListener('load', loaded);
+            }
+        });
+    }, []);
 
     // const photos = props.data.map((photo, index) => {
     //     namePic = [...namePic, photo.name];
@@ -41,23 +59,23 @@ const PhotoGallery = (props) => {
     //     );
     // });
 
-    const photos2 = (
-        <Masonry
-            columns={{ xs: 2, sm: 4 }}
-            spacing={{ xs: 1, sm: 2 }}
-        >
-            {props.data.map((photo, index) => (
-                <img
-                    key={index}
-                    rcset={`/natal/natal${props.year}/${photo.name}_low.${props.format}`}
-                    src={`/natal/natal${props.year}/${photo.name}_medium.${props.format}`}
-                    loading='lazy'
-                    alt={`${photo.id}`}
-                    onClick={() => setFile(() => ({ name: photo.name, number: index }))}
-                />
-            ))}
-        </Masonry>
-    );
+    const photos = props.data.map((photo, index) => {
+        namePic = [...namePic, photo.name];
+        return (
+            <LazyLoadImage
+                key={photo.name}
+                src={`/natal/natal${props.year}/${photo.name}_medium.${props.format}`}
+                alt={`${photo.id}`}
+                className='galleryImg'
+                // height={500}
+                // width={333}
+                effect='blur'
+                style={{ width: '100%', cursor: 'pointer' }}
+                placeholderSrc={`/natal/natal${props.year}/${photo.name}_low.${props.format}`}
+                onClick={() => setFile(() => ({ name: photo.name, number: index }))}
+            />
+        );
+    });
 
     const nextPhoto = () => {
         setFile(() => ({
@@ -88,10 +106,16 @@ const PhotoGallery = (props) => {
 
     return (
         <>
-            {photos2}
+            <Masonry
+                columns={{ xs: 2, sm: 4 }}
+                spacing={{ xs: 1, sm: 2 }}
+            >
+                {photos}
+            </Masonry>
             <div
-                className='popup-media'
-                style={{ display: file.name ? 'block' : 'none' }}
+                className={`popup-media ${
+                    file.name ? 'popup-media__display' : 'popup-media__notdisplay'
+                }`}
             >
                 <span onClick={() => setFile(() => ({ name: null, number: null }))}>&times;</span>
                 {file.name != null ? (

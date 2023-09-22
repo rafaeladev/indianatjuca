@@ -78,3 +78,20 @@
         );
     }
 }
+
+.bannerCanvas {
+    width: 100%;
+    background-color: $color-green;
+
+    &__title {
+        width: 50%;
+    }
+    &--margin {
+        display: flex;
+        padding-inline: $layout-padding;
+        max-width: 1440px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+}

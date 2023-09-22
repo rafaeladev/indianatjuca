@@ -1,0 +1,55 @@
+.text-animate {
+    display: inline-block;
+    opacity: 0;
+    animation: bounceIn;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    min-width: 10px;
+    font-size: 5rem;
+    font-family: $font-1;
+    font-weight: 400;
+    color: $color-white;
+    @include mobile-only {
+        font-size: 3.5rem;
+        margin-top: 0vh;
+    }
+}
+
+.text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+    font-size: 5rem;
+    font-family: $font-1;
+    font-weight: 400;
+    color: $color-white;
+    &:hover {
+        animation: rubberBand 1s;
+        color: $color-piment;
+    }
+    @include mobile-only {
+        font-size: 3.5rem;
+    }
+}
+
+@for $i from 1 through 35 {
+    .text-animate._#{$i} {
+        animation-delay: #{$i / 10}s;
+    }
+}
+
+.span_animate {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+@include mobile-only {
+    .text-animate._9 {
+        display: block;
+    }
+    .text-animate-hover._9 {
+        display: block;
+    }
+}

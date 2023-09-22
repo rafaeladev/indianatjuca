@@ -1,28 +1,40 @@
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+// @keyframes rotate {
+//     from {
+//         transform: rotate(0deg);
+//     }
+//     to {
+//         transform: rotate(360deg);
+//     }
+// }
+
+// .loader {
+//     padding: 10px;
+//     border: 6px solid $color-piment;
+//     border-bottom-color: transparent;
+//     border-radius: 22px;
+//     animation: rotate 1s infinite linear;
+//     height: 0;
+//     width: 0;
+//     font-family: $font-2;
+//     display: block;
+//     margin: auto;
+
+//     &__title {
+//         margin-top: 100px;
+//         margin-bottom: 40px;
+//         margin-inline: auto;
+//         text-align: center;
+//     }
+// }
+
+// react Loader
+$primary-color: $color-piment;
+@import 'loaders.css/src/animations/pacman.scss';
+
+.loader-hidden {
+    display: none;
 }
-
-.loader {
-    padding: 10px;
-    border: 6px solid $color-piment;
-    border-bottom-color: transparent;
-    border-radius: 22px;
-    animation: rotate 1s infinite linear;
-    height: 0;
-    width: 0;
-    font-family: $font-2;
+.loader-active {
+    margin-top: 15vh;
     display: block;
-    margin: auto;
-
-    &__title {
-        margin-top: 100px;
-        margin-bottom: 40px;
-        margin-inline: auto;
-        text-align: center;
-    }
 }

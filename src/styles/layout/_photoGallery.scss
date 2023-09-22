@@ -63,11 +63,14 @@
     background: rgba(0, 0, 0, 1);
     width: 100%;
     height: 100%;
+    transition: all 0.2s ease-in;
     &__display {
-        display: block;
+        opacity: 1;
     }
     &__notdisplay {
-        display: none;
+        opacity: 0;
+        touch-action: none;
+        pointer-events: none;
     }
     &__photo {
         position: absolute;
@@ -132,4 +135,58 @@
     &__noArrow {
         display: none;
     }
+    & img {
+        opacity: 0;
+        animation: fadeIn 0.5s forwards; // fron animation.css
+        animation-delay: 0.3s;
+    }
+}
+
+.blur-load {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    & img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        display: block;
+        object-position: center;
+        object-fit: cover;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        animation: pulse 2.5s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.blur-load.loaded > img {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+}
+
+.blur-load.loaded {
+    &::before {
+        content: none;
+        animation: none;
+    }
+}
+
+.blur-load > img {
+    opacity: 0;
 }

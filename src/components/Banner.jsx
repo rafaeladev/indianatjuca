@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import AnimatedLetters from './AnimatedLetters.jsx';
+import { Canvas } from '@react-three/fiber';
+import Scene from './Scene.jsx';
 
 const Banner = (props) => {
     const styleBanner = {
@@ -7,12 +10,13 @@ const Banner = (props) => {
         color: '#161616',
         top: '0',
         position: 'relative',
-        height: '350px',
+        height: '300px',
         width: '100%',
         gridColumn: '1 / -1',
         overflow: 'hidden',
         display: 'flex',
         justifyContent: 'center',
+        // backgroundImage: `url(${props.img})`,
     };
     const homeBanner = {
         fontWeight: 'bold',
@@ -31,7 +35,7 @@ const Banner = (props) => {
     const banner = {
         width: '100%',
         backgroundColor: `${
-            props.page === 'natal' ? '#c2c2cc' : props.page === 'home' ? '#c2c2cc' : '#13323e'
+            props.page === 'natal' ? '#c2c2cc' : props.page === 'home' ? '#ba3d47' : '#13323e'
         }`,
         display: 'flex',
         justifyContent: 'center',
@@ -40,19 +44,55 @@ const Banner = (props) => {
     if (props.page === 'home') {
         classStyle = styleBanner;
     }
+    const [letterClass, setLetterClass] = useState('text-animate');
+    useEffect(() => {
+        setTimeout(() => {
+            setLetterClass('text-animate-hover');
+        }, 4000);
+    }, []);
+    if (props.page === 'home') {
+        return (
+            <div className='bannerCanvas'>
+                <div className='bannerCanvas--margin'>
+                    {/* <div className='canvasWrapper'>
+                        <Canvas
+                            camera={{
+                                fov: 45,
+                                near: 0.1,
+                                far: 200,
+                                position: [1, 2, 6],
+                            }}
+                        >
+                            <Scene />
+                        </Canvas>
+                    </div> */}
+                    <div className='bannerCanvas__title'>
+                        <AnimatedLetters
+                            letterClass={letterClass}
+                            strArray={props.title}
+                            idx={2}
+                        />
+                    </div>
+                </div>
+            </div>
+        );
+    }
     return (
         <div style={banner}>
             <div style={classStyle}>
-                {/* {props.page === 'home' ? null : (
+                {props.page === 'home' ? (
+                    <AnimatedLetters
+                        letterClass={letterClass}
+                        strArray={props.title}
+                        idx={2}
+                    />
+                ) : (
                     <div className='bannerTitle'>
                         <h1>{props.title && props.title}</h1>
                         <h1>{props.title && props.title}</h1>
                     </div>
-                )} */}
-                <div className='bannerTitle'>
-                    <h1>{props.title && props.title}</h1>
-                    <h1>{props.title && props.title}</h1>
-                </div>
+                )}
+
                 {props.page === 'home' ? null : (
                     <img
                         className='bannerImg'

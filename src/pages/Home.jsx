@@ -13,10 +13,13 @@ import { LngContext } from '../utils/context.jsx';
 import { Link } from 'react-router-dom';
 import HomePhotos from '../components/HomePhotos.jsx';
 
+import Loader from 'react-loaders';
+
 const Home = () => {
     const { language } = useContext(LngContext);
     const years = [2018, 2019, 2022, 2023];
     const yearsSize = years.length;
+    const nameArray = ['I', 'n', 'd', 'i', 'a', 'n', 'a', '', 'T', 'i', 'j', 'u', 'c', 'a'];
     const { h2, content, content2, content3, subtitles, endPage } = contentData.find(
         (data) => data.title === language
     );
@@ -80,21 +83,21 @@ const Home = () => {
             <Banner
                 img={hommebanner}
                 page={'home'}
-                title={'Indiana Tijuca'}
+                title={nameArray}
             />
             <div className='home'>
                 <section className='homeContent'>
                     {/* <h1 className='homeContent--margin'>Indiana Tijuca</h1> */}
-                    <p>{content2}</p>
-                    <p className='homeContent--margin'>{content3}</p>
+                    <p className='text-fade'>{content2}</p>
+                    <p className='homeContent--margin text-fade'>{content3}</p>
                     <h2
-                        className='homeContent__title'
+                        className='homeContent__title text-pulse'
                         key={nanoid()}
                     >
                         {homeTitle && homeTitle}
                     </h2>
                     <div className='homeContent__text homeContent--margin'>
-                        <p>{content}</p>
+                        <p className='text-fade'>{content}</p>
                     </div>
                     <div className='homeContent__actions '>
                         <Link to={`natal/${years[yearsSize - 1]}`}>

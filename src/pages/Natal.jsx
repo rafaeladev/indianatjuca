@@ -12,6 +12,8 @@ export async function loader({ params }) {
     return getPhotos(`Natal${params.id}`);
 }
 
+import Loader from 'react-loaders';
+
 const Natal = () => {
     const currentNatal = useLoaderData();
     const { language } = useContext(LngContext);
