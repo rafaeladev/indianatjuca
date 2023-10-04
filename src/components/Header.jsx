@@ -18,7 +18,7 @@ const Header = (props) => {
                 headerRef.current.classList.remove('header--color-change');
             }
         });
-    });
+    }, []);
 
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 

@@ -10,24 +10,39 @@
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    // transform: translateY(100%);
     transition: all 1s;
 }
 
 .show {
     opacity: 1;
     filter: blur(0);
-    // transform: translateX(0);
+    animation: fadeIn 1s forwards;
 }
 
 .text-fade {
-    // opacity: 0;
-    // transform-style: preserve-3d;
-    // animation: fadeIn 1s forwards; // fron animation.css
+    opacity: 0;
+    transform-style: preserve-3d;
+    animation: fadeIn 1s forwards; // fron animation.css
     // animation-delay: 1s;
-    animation: pulse 1s;
+    // animation: pulse 1s;
 }
 
 .text-pulse {
     animation: pulse 1s;
+}
+
+.text-translate {
+    animation: translateText 1s ease-in-out;
+}
+
+@keyframes translateText {
+    0% {
+        transform: translateY(20%);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }

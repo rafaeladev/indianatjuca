@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AnimatedLetters from './AnimatedLetters.jsx';
 import { Canvas } from '@react-three/fiber';
-import Scene from './Scene.jsx';
+import Experience from './3D/Experience.jsx';
 
 const Banner = (props) => {
     const styleBanner = {
@@ -44,6 +44,23 @@ const Banner = (props) => {
     if (props.page === 'home') {
         classStyle = styleBanner;
     }
+
+    let position = 0;
+    const sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+    };
+    sizes.width < 768 ? (position = -45) : sizes.width < 992 ? (position = -33) : (position = -30);
+
+    const Style = {
+        width: '100%',
+        height: sizes.width * 0.66,
+        backgrounColor: '#ACA7AD',
+        maxWidth: '1240px',
+        maxHeight: '818.4px',
+        margin: 'auto',
+    };
+
     const [letterClass, setLetterClass] = useState('text-animate');
     useEffect(() => {
         setTimeout(() => {
@@ -52,29 +69,42 @@ const Banner = (props) => {
     }, []);
     if (props.page === 'home') {
         return (
-            <div className='bannerCanvas'>
-                <div className='bannerCanvas--margin'>
-                    {/* <div className='canvasWrapper'>
-                        <Canvas
-                            camera={{
-                                fov: 45,
-                                near: 0.1,
-                                far: 200,
-                                position: [1, 2, 6],
-                            }}
-                        >
-                            <Scene />
-                        </Canvas>
-                    </div> */}
-                    <div className='bannerCanvas__title'>
-                        <AnimatedLetters
-                            letterClass={letterClass}
-                            strArray={props.title}
-                            idx={2}
-                        />
-                    </div>
-                </div>
-            </div>
+            // <div className='bannerCanvas'>
+            //     <div className='bannerCanvas--margin'>
+            //         <div className='canvasWrapper'>
+            //             <Canvas
+            //                 camera={{
+            //                     fov: 45,
+            //                     near: 0.1,
+            //                     far: 200,
+            //                     position: [1, 2, 6],
+            //                 }}
+            //             >
+            //                 <Experience />
+            //             </Canvas>
+            //         </div>
+            //         <div className='bannerCanvas__title'>
+            //             <AnimatedLetters
+            //                 letterClass={letterClass}
+            //                 strArray={props.title}
+            //                 idx={2}
+            //             />
+            //         </div>
+            //     </div>
+            // </div>
+            <Canvas
+                flat // stop the use of the tone mapping => colors became ok as the one we have in blender
+                camera={{
+                    fov: 32,
+                    near: 0.1,
+                    far: 200,
+                    position: [0, -1, -42],
+                    rotation: [3.022, 0, -2 * Math.PI],
+                }}
+                style={Style}
+            >
+                <Experience />
+            </Canvas>
         );
     }
     return (
