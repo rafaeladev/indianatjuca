@@ -31,9 +31,9 @@ const Experience = () => {
     bakedTexture.flipY = false;
 
     // Debug
-    const { color } = useControls('Background', {
-        color: '#13323e',
-    });
+    // const { color } = useControls('Background', {
+    //     color: '#13323e',
+    // });
 
     // Objects
     const lidsNames = [
@@ -155,7 +155,7 @@ const Experience = () => {
     return (
         <>
             <color
-                args={[color]}
+                args={['#13323e']}
                 attach='background'
             />
             <PresentationControls

@@ -122,9 +122,7 @@ select {
     padding-block: 0px;
 }
 
-.canvasWrapper {
-    height: 300px;
-    width: 50%;
+canvas {
     pointer-events: auto;
     touch-action: pan-y;
 }

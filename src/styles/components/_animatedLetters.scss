@@ -10,6 +10,7 @@
     font-family: $font-1;
     font-weight: 400;
     color: $color-white;
+    margin-bottom: 0.2em;
     @include mobile-only {
         font-size: 3.5rem;
         margin-top: 0vh;
@@ -24,6 +25,7 @@
     font-family: $font-1;
     font-weight: 400;
     color: $color-white;
+    margin-bottom: 0.2em;
     &:hover {
         animation: rubberBand 1s;
         color: $color-piment;
@@ -45,11 +47,11 @@
     text-align: center;
 }
 
-@include mobile-only {
-    .text-animate._9 {
-        display: block;
-    }
-    .text-animate-hover._9 {
-        display: block;
-    }
-}
+// @include mobile-only {
+//     .text-animate._9 {
+//         display: block;
+//     }
+//     .text-animate-hover._9 {
+//         display: block;
+//     }
+// }
