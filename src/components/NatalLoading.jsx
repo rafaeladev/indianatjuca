@@ -91,7 +91,6 @@ const NatalLoading = () => {
                     </ul>
                 </div>
             </section>
-            <Loader type='pacman' />
         </>
     );
 };
