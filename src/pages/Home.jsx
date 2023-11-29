@@ -22,8 +22,10 @@ const Home = () => {
     const nameArray = ['I', 'n', 'd', 'i', 'a', 'n', 'a', '', 'T', 'i', 'j', 'u', 'c', 'a'];
 
     const data = contentData.find((data) => data.title === language);
-    const h2 = data.h2 ? data.h2 : null;
+    // const h2 = data.h2 ? data.h2 : null;
+    // console.log(h2);
     const content = data.content ? data.content : null;
+    const content2 = data.content2 ? data.content2 : null;
     const content3 = data.content3 ? data.content3 : null;
     const subtitles = data.subtitles ? data.subtitles : null;
     const endPage = data.endPage ? data.endPage : null;
@@ -49,40 +51,40 @@ const Home = () => {
         );
     });
 
-    const homeTitle = h2
-        ? h2.map((title, index) => {
-              if (index === 1) {
-                  return (
-                      <i
-                          key={index}
-                          className='homeContent--orange homeContent--display'
-                      >
-                          {` ${title} `}
-                      </i>
-                  );
-              }
-              if (index === 3) {
-                  return (
-                      <i
-                          key={index}
-                          className='homeContent--green homeContent--display'
-                      >
-                          {title}
-                      </i>
-                  );
-              } else {
-                  return (
-                      <i
-                          key={index}
-                          className='homeContent--display'
-                      >
-                          {title}
-                      </i>
-                  );
-              }
-              return;
-          })
-        : null;
+    // const homeTitle = h2
+    //     ? h2.map((title, index) => {
+    //           if (index === 1) {
+    //               return (
+    //                   <i
+    //                       key={index}
+    //                       className='homeContent--orange homeContent--display'
+    //                   >
+    //                       {` ${title} `}
+    //                   </i>
+    //               );
+    //           }
+    //           if (index === 3) {
+    //               return (
+    //                   <i
+    //                       key={index}
+    //                       className='homeContent--green homeContent--display'
+    //                   >
+    //                       {title}
+    //                   </i>
+    //               );
+    //           } else {
+    //               return (
+    //                   <i
+    //                       key={index}
+    //                       className='homeContent--display'
+    //                   >
+    //                       {title}
+    //                   </i>
+    //               );
+    //           }
+    //           return;
+    //       })
+    //     : null;
 
     return (
         <>
@@ -96,12 +98,14 @@ const Home = () => {
                     {/* <h1 className='homeContent--margin'>Indiana Tijuca</h1> */}
                     <p className='text-fade'>{content2}</p>
                     <p className='homeContent--margin text-fade'>{content3}</p>
-                    <h2
-                        className='homeContent__title text-pulse'
-                        key={nanoid()}
-                    >
-                        {homeTitle && homeTitle}
-                    </h2>
+                    {/* {homeTitle && (
+                        <h2
+                            className='homeContent__title text-pulse'
+                            key={nanoid()}
+                        >
+                            {homeTitle}
+                        </h2>
+                    )} */}
                     <div className='homeContent__text homeContent--margin'>
                         <p className='text-fade'>{content}</p>
                     </div>
