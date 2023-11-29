@@ -23,8 +23,8 @@ const Home = () => {
 
     const data = contentData.find((data) => data.title === language);
     // const h2 = data.h2 ? data.h2 : null;
-    // console.log(h2);
-    const content = data.content ? data.content : null;
+
+    const content = data.content ? data.content : '';
     const content2 = data.content2 ? data.content2 : null;
     const content3 = data.content3 ? data.content3 : null;
     const subtitles = data.subtitles ? data.subtitles : null;
