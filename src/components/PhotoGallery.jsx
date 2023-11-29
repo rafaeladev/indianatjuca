@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+
 import leftArrow from '/leftArrow.png';
 import rightArrow from '/rightArrow.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -12,6 +13,7 @@ import useKeypress from 'react-use-keypress';
 import Masonry from '@mui/lab/Masonry';
 
 const PhotoGallery = (props) => {
+    const masonryRef = useRef();
     const [file, setFile] = useState({ name: null, number: null });
     let namePic = [];
     const imgRef = useRef();
@@ -59,6 +61,23 @@ const PhotoGallery = (props) => {
     //     );
     // });
 
+    useEffect(() => {
+        // Réinitialise la disposition Masonry lors du chargement initial du composant
+        if (masonryRef.current && masonryRef.current.layout) {
+            masonryRef.current.layout();
+        }
+    }, []);
+
+    const handleImageLoad = () => {
+        // Attendre un court délai pour permettre aux images de se charger complètement
+        setTimeout(() => {
+            // Déclenche une nouvelle mise en page Masonry après le chargement des images
+            if (masonryRef.current && masonryRef.current.layout) {
+                masonryRef.current.layout();
+            }
+        }, 100); // Ajuste le délai en fonction de tes besoins
+    };
+
     const photos = props.data.map((photo, index) => {
         namePic = [...namePic, photo.name];
         return (
@@ -69,13 +88,27 @@ const PhotoGallery = (props) => {
                 className='galleryImg'
                 // height={500}
                 // width={333}
+                // width='250px'
+                // height='350px'
                 effect='blur'
-                style={{ width: '100%', cursor: 'pointer' }}
+                // style={{ width: '100%', cursor: 'pointer' }}
                 placeholderSrc={`/natal/natal${props.year}/${photo.name}_low.${props.format}`}
                 onClick={() => setFile(() => ({ name: photo.name, number: index }))}
+                visibleByDefault={false}
+                onLoad={() => handleImageLoad()}
             />
         );
     });
+
+    useEffect(() => {
+        const images = document.querySelectorAll('.galleryImg');
+
+        images.forEach((img) => {
+            img.addEventListener('load', () => {
+                window.dispatchEvent(new Event('resize'));
+            });
+        });
+    }, []);
 
     const nextPhoto = () => {
         setFile(() => ({
@@ -107,8 +140,10 @@ const PhotoGallery = (props) => {
     return (
         <>
             <Masonry
-                columns={{ xs: 2, sm: 4 }}
-                spacing={{ xs: 1, sm: 2 }}
+                ref={masonryRef}
+                columns={{ xs: 2, sm: 3, md: 4 }}
+                spacing={{ xs: 2, sm: 2, md: 2 }}
+                defaultWidth={200}
             >
                 {photos}
             </Masonry>

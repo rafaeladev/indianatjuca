@@ -49,11 +49,10 @@
     }
 }
 
-// .galleryImg {
-//     width: 100%;
-//     object-fit: cover;
-//     overflow: hidden;
-// }
+.galleryImg {
+    width: 100%;
+    height: auto; // ou spécifie une hauteur fixe
+}
 
 .popup-media {
     position: fixed;

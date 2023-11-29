@@ -4,8 +4,6 @@ import React from 'react';
 
 import Loader from 'react-loaders';
 
-console.log(Loader);
-
 const AppWrapper = () => {
     const { state } = useNavigation();
     if (state === 'loading') {
