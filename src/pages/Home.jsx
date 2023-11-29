@@ -107,11 +107,11 @@ const Home = () => {
                             {homeTitle}
                         </h2>
                     )} */}
-                    {content && (
+                    {/* {content && (
                         <div className='homeContent__text homeContent--margin'>
                             <p className='text-fade'>{content}</p>
                         </div>
-                    )}
+                    )} */}
                     <div className='homeContent__actions '>
                         <Link to={`natal/${years[yearsSize - 1]}`}>
                             <button className='buttonNow'>{subtitles.action}</button>
