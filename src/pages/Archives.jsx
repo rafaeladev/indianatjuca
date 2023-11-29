@@ -17,22 +17,23 @@ const Historico = () => {
     });
 
     const cardElements = archives.map((data) => {
+        if (!data) return;
         return (
             <li
                 className='card-item'
-                key={data.id}
+                key={data?.id}
             >
                 <Link
                     className='card-link'
-                    to={`/natal/${data.id}`}
+                    to={`/natal/${data?.id}`}
                 >
                     <img
                         className='card-img'
-                        src={data.urlImg}
-                        alt={data.title[language]}
+                        src={data?.urlImg}
+                        alt={data?.title[language]}
                     />
 
-                    <h2>{data.title[language]}</h2>
+                    <h2>{data?.title[language]}</h2>
                 </Link>
             </li>
         );
@@ -45,9 +46,11 @@ const Historico = () => {
                 page={'Archives'}
                 title={language === 'BR' ? 'Arquivos' : language === 'FR' ? 'Archives' : 'Arquives'}
             />
-            <section>
-                <ul className='archives archives--maxi'>{cardElements}</ul>
-            </section>
+            {cardElements && (
+                <section>
+                    <ul className='archives archives--maxi'>{cardElements}</ul>
+                </section>
+            )}
             <CTA />
         </>
     );

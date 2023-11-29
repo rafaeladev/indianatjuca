@@ -25,7 +25,7 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink
-                        to='/loading'
+                        to='/2023'
                         className={({ isActive }) =>
                             isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
                         }
@@ -52,7 +52,7 @@ const Nav = () => {
                 </li>
                 <li className='nav__link__arch'>
                     <NavLink
-                        to='/loading'
+                        to='/2023'
                         className={({ isActive }) =>
                             isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
                         }
@@ -72,6 +72,16 @@ const Nav = () => {
                         }
                     >
                         Infos
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to='contact'
+                        className={({ isActive }) =>
+                            isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
+                        }
+                    >
+                        {language === 'BR' ? 'Contato' : language === 'FR' ? 'Contact' : 'Contact'}
                     </NavLink>
                 </li>
                 <li className='nav__lang'>

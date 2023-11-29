@@ -19,6 +19,7 @@ import AppWrapper from './components/AppWrapper.jsx';
 import NatalLoading, { loader as natalLoadingPageLoader } from './components/NatalLoading.jsx';
 import Error from './components/Error.jsx';
 import CollapsePage from './pages/CollapsePage.jsx';
+import Contact from './pages/Contact.jsx';
 
 const App = () => {
     const router = createBrowserRouter(
@@ -52,10 +53,14 @@ const App = () => {
                         />
                     </Route>
                     <Route
-                        path='loading'
+                        path='2023'
                         loader={natalLoadingPageLoader}
                         errorElement={<Error />}
                         element={<NatalLoading />}
+                    />
+                    <Route
+                        path='contact'
+                        element={<Contact />}
                     />
                     <Route
                         path='infos'

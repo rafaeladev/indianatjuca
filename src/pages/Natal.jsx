@@ -12,8 +12,6 @@ export async function loader({ params }) {
     return getPhotos(`Natal${params.id}`);
 }
 
-import Loader from 'react-loaders';
-
 const Natal = () => {
     const currentNatal = useLoaderData();
     const { language } = useContext(LngContext);
@@ -26,17 +24,18 @@ const Natal = () => {
         window.scrollTo(0, 0);
     });
 
-    const natalPageText = natalContent.find((data) => data.year === natalYear);
+    const natalPageText = natalContent?.find((data) => data.year === natalYear);
 
     if (natalPageText && natalPageText.content1.list === true) {
-        listItems = natalPageText.content1.listItems.map((text, index) => (
+        listItems = natalPageText.content1.listItems.map((text, index) => {
+            if (!text) return;
             <li
                 className='textBox__list'
                 key={index}
             >
                 {text[language]}
-            </li>
-        ));
+            </li>;
+        });
     }
 
     if (natalPageText) {

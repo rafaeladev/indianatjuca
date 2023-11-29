@@ -113,7 +113,7 @@ const Home = () => {
                     )}
                     {subtitles && (
                         <div className='homeContent__actions '>
-                            <Link to={`natal/${years[yearsSize - 1]}`}>
+                            <Link to={`/${years[yearsSize - 1]}`}>
                                 <button className='buttonNow'>{subtitles.action}</button>
                             </Link>
                         </div>

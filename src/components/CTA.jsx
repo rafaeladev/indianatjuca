@@ -13,7 +13,7 @@ const CTA = () => {
     return (
         <div className='cta'>
             <div className='homeContent__actions '>
-                <Link to={`/natal/loading`}>
+                <Link to={`/2023`}>
                     <button className='buttonNow'>{subtitles.action}</button>
                 </Link>
             </div>
