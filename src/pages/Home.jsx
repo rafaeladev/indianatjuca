@@ -25,10 +25,10 @@ const Home = () => {
     const h2 = data?.h2;
 
     const content = data?.content;
-    const content2 = data.content2 ? data.content2 : null;
-    const content3 = data.content3 ? data.content3 : null;
-    const subtitles = data.subtitles ? data.subtitles : null;
-    const endPage = data.endPage ? data.endPage : null;
+    const content2 = data?.content2;
+    const content3 = data?.content3;
+    const subtitles = data?.subtitles;
+    const endPage = data?.endPage;
 
     const cardElements = homePhotoCardData.map((data) => {
         return (
@@ -95,8 +95,8 @@ const Home = () => {
             <div className='home'>
                 <section className='homeContent'>
                     {/* <h1 className='homeContent--margin'>Indiana Tijuca</h1> */}
-                    <p className='text-fade'>{content2}</p>
-                    <p className='homeContent--margin text-fade'>{content3}</p>
+                    {content2 && <p className='text-fade'>{content2}</p>}
+                    {content3 && <p className='homeContent--margin text-fade'>{content3}</p>}
                     {homeTitle && (
                         <h2
                             className='homeContent__title text-pulse'
@@ -110,18 +110,22 @@ const Home = () => {
                             <p className='text-fade'>{content}</p>
                         </div>
                     )}
-                    <div className='homeContent__actions '>
-                        <Link to={`natal/${years[yearsSize - 1]}`}>
-                            <button className='buttonNow'>{subtitles.action}</button>
-                        </Link>
-                    </div>
-                    <h2 className='homeContent__title homeContent--margin homeContent--article'>
-                        <>{endPage[0]}</>
-                        <i className='homeContent--green homeContent--display'>{endPage[1]}</i>
-                        <>{endPage[2]}</>
-                        <i className='homeContent--orange homeContent--display'>{endPage[3]}</i>
-                        <>{endPage[4]}</>
-                    </h2>
+                    {subtitles && (
+                        <div className='homeContent__actions '>
+                            <Link to={`natal/${years[yearsSize - 1]}`}>
+                                <button className='buttonNow'>{subtitles.action}</button>
+                            </Link>
+                        </div>
+                    )}
+                    {endPage && (
+                        <h2 className='homeContent__title homeContent--margin homeContent--article'>
+                            <>{endPage[0]}</>
+                            <i className='homeContent--green homeContent--display'>{endPage[1]}</i>
+                            <>{endPage[2]}</>
+                            <i className='homeContent--orange homeContent--display'>{endPage[3]}</i>
+                            <>{endPage[4]}</>
+                        </h2>
+                    )}
                 </section>
                 <ul className='homePhotosSection'>{cardElements}</ul>
             </div>
