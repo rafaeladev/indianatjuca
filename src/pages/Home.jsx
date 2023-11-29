@@ -49,38 +49,40 @@ const Home = () => {
         );
     });
 
-    const homeTitle = h2?.map((title, index) => {
-        if (index === 1) {
-            return (
-                <i
-                    key={index}
-                    className='homeContent--orange homeContent--display'
-                >
-                    {` ${title} `}
-                </i>
-            );
-        }
-        if (index === 3) {
-            return (
-                <i
-                    key={index}
-                    className='homeContent--green homeContent--display'
-                >
-                    {title}
-                </i>
-            );
-        } else {
-            return (
-                <i
-                    key={index}
-                    className='homeContent--display'
-                >
-                    {title}
-                </i>
-            );
-        }
-        return;
-    });
+    const homeTitle = h2
+        ? h2.map((title, index) => {
+              if (index === 1) {
+                  return (
+                      <i
+                          key={index}
+                          className='homeContent--orange homeContent--display'
+                      >
+                          {` ${title} `}
+                      </i>
+                  );
+              }
+              if (index === 3) {
+                  return (
+                      <i
+                          key={index}
+                          className='homeContent--green homeContent--display'
+                      >
+                          {title}
+                      </i>
+                  );
+              } else {
+                  return (
+                      <i
+                          key={index}
+                          className='homeContent--display'
+                      >
+                          {title}
+                      </i>
+                  );
+              }
+              return;
+          })
+        : null;
 
     return (
         <>
