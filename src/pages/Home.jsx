@@ -49,7 +49,7 @@ const Home = () => {
         );
     });
 
-    const homeTitle = h2.map((title, index) => {
+    const homeTitle = h2?.map((title, index) => {
         if (index === 1) {
             return (
                 <i
