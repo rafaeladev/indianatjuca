@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ArchivesCards from './ArchivesCards.jsx';
 import Banner from './Banner.jsx';
 import { LngContext } from '../utils/context.jsx';
@@ -8,7 +8,6 @@ import { getLoading } from '../apiGoogle.js';
 export async function loader() {
     return getLoading();
 }
-import Loader from 'react-loaders';
 
 const NatalLoading = () => {
     const { language } = useContext(LngContext);
@@ -49,6 +48,13 @@ const NatalLoading = () => {
         }
     }
 
+    const link =
+        language === 'BR'
+            ? `Para participar : `
+            : language === 'FR'
+            ? `https://lydia-app.com/pots?id=68953-noel-enfants-2023`
+            : `https://lydia-app.com/pots?id=68953-noel-enfants-2023`;
+
     const title =
         language === 'BR'
             ? `Para participar : `
@@ -58,10 +64,11 @@ const NatalLoading = () => {
 
     const CTA =
         language === 'BR'
-            ? `Participações à partir de novembro 2023!`
+            ? `Participar via PIX : mariadsdo@gmail.com`
             : language === 'FR'
-            ? `Participations à partir de novembre 2023!`
-            : `Participations from November 2023!`;
+            ? `C'est ici pour participer de la cagnotte de 2023!`
+            : `Click here to participate this year!`;
+
     return (
         <>
             <Banner
@@ -78,9 +85,14 @@ const NatalLoading = () => {
                     <h2 style={{ color: '#13323e', marginBottom: '1em' }}>{title}</h2>
                     {paragraph}
                 </div>
-                <div className={`textBox textBox--block textBox--orangeBack`}>
-                    <h2 style={{ color: '#FFF' }}>{CTA}</h2>
-                </div>
+                <Link
+                    to={link}
+                    target='_blank'
+                >
+                    <div className={`textBox textBox--block textBox--orangeBack`}>
+                        <h2 style={{ color: '#FFF' }}>{CTA}</h2>
+                    </div>
+                </Link>
             </section>
             <section className='homeContent'>
                 <div className={`textBox textBox--whiteBack`}>
