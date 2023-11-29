@@ -25,7 +25,7 @@ const Home = () => {
     const data = contentData.find((data) => data.title === language);
     // const h2 = data.h2 ? data.h2 : null;
 
-    content = data.content ? data.content : '';
+    // content = data.content ? data.content : '';
     const content2 = data.content2 ? data.content2 : null;
     const content3 = data.content3 ? data.content3 : null;
     const subtitles = data.subtitles ? data.subtitles : null;
@@ -107,11 +107,11 @@ const Home = () => {
                             {homeTitle}
                         </h2>
                     )} */}
-                    {/* {content && (
+                    {content && (
                         <div className='homeContent__text homeContent--margin'>
                             <p className='text-fade'>{content}</p>
                         </div>
-                    )} */}
+                    )}
                     <div className='homeContent__actions '>
                         <Link to={`natal/${years[yearsSize - 1]}`}>
                             <button className='buttonNow'>{subtitles.action}</button>
