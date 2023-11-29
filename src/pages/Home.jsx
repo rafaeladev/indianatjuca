@@ -30,7 +30,8 @@ const Home = () => {
     const subtitles = data?.subtitles;
     const endPage = data?.endPage;
 
-    const cardElements = homePhotoCardData.map((data) => {
+    const cardElements = homePhotoCardData?.map((data) => {
+        if (!data) return;
         return (
             <li key={data.id}>
                 <Link
@@ -51,7 +52,7 @@ const Home = () => {
         );
     });
 
-    const homeTitle = h2.map((title, index) => {
+    const homeTitle = h2?.map((title, index) => {
         if (!title) return;
         if (index === 1) {
             return (
