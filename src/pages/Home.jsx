@@ -20,12 +20,11 @@ const Home = () => {
     const years = [2018, 2019, 2022, 2023];
     const yearsSize = years.length;
     const nameArray = ['I', 'n', 'd', 'i', 'a', 'n', 'a', '', 'T', 'i', 'j', 'u', 'c', 'a'];
-    let content = '';
 
-    const data = contentData.find((data) => data.title === language);
-    // const h2 = data.h2 ? data.h2 : null;
+    const data = contentData?.find((data) => data.title === language);
+    const h2 = data?.h2;
 
-    // content = data.content ? data.content : '';
+    const content = data?.content;
     const content2 = data.content2 ? data.content2 : null;
     const content3 = data.content3 ? data.content3 : null;
     const subtitles = data.subtitles ? data.subtitles : null;
@@ -52,40 +51,39 @@ const Home = () => {
         );
     });
 
-    // const homeTitle = h2
-    //     ? h2.map((title, index) => {
-    //           if (index === 1) {
-    //               return (
-    //                   <i
-    //                       key={index}
-    //                       className='homeContent--orange homeContent--display'
-    //                   >
-    //                       {` ${title} `}
-    //                   </i>
-    //               );
-    //           }
-    //           if (index === 3) {
-    //               return (
-    //                   <i
-    //                       key={index}
-    //                       className='homeContent--green homeContent--display'
-    //                   >
-    //                       {title}
-    //                   </i>
-    //               );
-    //           } else {
-    //               return (
-    //                   <i
-    //                       key={index}
-    //                       className='homeContent--display'
-    //                   >
-    //                       {title}
-    //                   </i>
-    //               );
-    //           }
-    //           return;
-    //       })
-    //     : null;
+    const homeTitle = h2.map((title, index) => {
+        if (!title) return;
+        if (index === 1) {
+            return (
+                <i
+                    key={index}
+                    className='homeContent--orange homeContent--display'
+                >
+                    {` ${title} `}
+                </i>
+            );
+        }
+        if (index === 3) {
+            return (
+                <i
+                    key={index}
+                    className='homeContent--green homeContent--display'
+                >
+                    {title}
+                </i>
+            );
+        } else {
+            return (
+                <i
+                    key={index}
+                    className='homeContent--display'
+                >
+                    {title}
+                </i>
+            );
+        }
+        return;
+    });
 
     return (
         <>
@@ -99,14 +97,14 @@ const Home = () => {
                     {/* <h1 className='homeContent--margin'>Indiana Tijuca</h1> */}
                     <p className='text-fade'>{content2}</p>
                     <p className='homeContent--margin text-fade'>{content3}</p>
-                    {/* {homeTitle && (
+                    {homeTitle && (
                         <h2
                             className='homeContent__title text-pulse'
                             key={nanoid()}
                         >
                             {homeTitle}
                         </h2>
-                    )} */}
+                    )}
                     {content && (
                         <div className='homeContent__text homeContent--margin'>
                             <p className='text-fade'>{content}</p>
