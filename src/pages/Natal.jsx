@@ -88,9 +88,11 @@ const Natal = () => {
                             list={false}
                             color='grayBack'
                         />
-                    </section>
-                    <section>
-                        <div className='container container--margin homeContent--grayBack'>
+
+                        <div
+                            className='container--margin homeContent--grayBack'
+                            style={{ display: 'flex', justifyContent: 'center' }}
+                        >
                             <PhotoGallery
                                 data={otherPhotos}
                                 year={natalYear}
