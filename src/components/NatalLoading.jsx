@@ -50,7 +50,7 @@ const NatalLoading = () => {
 
     const link =
         language === 'BR'
-            ? `Para participar : `
+            ? ``
             : language === 'FR'
             ? `https://lydia-app.com/pots?id=68953-noel-enfants-2023`
             : `https://lydia-app.com/pots?id=68953-noel-enfants-2023`;

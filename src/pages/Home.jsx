@@ -20,9 +20,13 @@ const Home = () => {
     const years = [2018, 2019, 2022, 2023];
     const yearsSize = years.length;
     const nameArray = ['I', 'n', 'd', 'i', 'a', 'n', 'a', '', 'T', 'i', 'j', 'u', 'c', 'a'];
-    const { h2, content, content2, content3, subtitles, endPage } = contentData.find(
-        (data) => data.title === language
-    );
+
+    const data = contentData.find((data) => data.title === language);
+    const h2 = data.h2 ? data.h2 : null;
+    const content = data.content ? data.content : null;
+    const content3 = data.content3 ? data.content3 : null;
+    const subtitles = data.subtitles ? data.subtitles : null;
+    const endPage = data.endPage ? data.endPage : null;
 
     const cardElements = homePhotoCardData.map((data) => {
         return (
