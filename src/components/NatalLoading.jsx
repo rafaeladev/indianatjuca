@@ -68,7 +68,7 @@ const NatalLoading = () => {
 
     const link =
         language === 'BR'
-            ? ``
+            ? `https://www.vakinha.com.br/4266932`
             : language === 'FR'
             ? `https://lydia-app.com/pots?id=68953-noel-enfants-2023`
             : `https://lydia-app.com/pots?id=68953-noel-enfants-2023`;
@@ -82,7 +82,7 @@ const NatalLoading = () => {
 
     const CTA =
         language === 'BR'
-            ? `Participar via PIX : mariadsdo@gmail.com`
+            ? `Clique aqui para participar da vaquinha de 2023`
             : language === 'FR'
             ? `C'est ici pour participer de la cagnotte de 2023!`
             : `Click here to participate this year!`;
