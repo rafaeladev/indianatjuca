@@ -17,6 +17,13 @@
     }
     &--whiteBack {
         background-color: $color-white;
+        &--border {
+            border: 2px solid $color-green;
+        }
+
+        & p {
+            text-align: center;
+        }
     }
 
     &--orangeBack {
@@ -53,5 +60,9 @@
     }
     & h3 {
         color: $color-green;
+    }
+    &--spanText {
+        font-size: 1.2rem;
+        font-weight: bold;
     }
 }

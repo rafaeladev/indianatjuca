@@ -12,10 +12,12 @@ export async function loader() {
 const NatalLoading = () => {
     const { language } = useContext(LngContext);
     const loadingData = useLoaderData();
-
+    console.log(loadingData);
     let paragraph = [];
     let subtitle = '';
     let paragraph_6 = '';
+    let date = '';
+    let close = '';
 
     for (let i = 0; i < loadingData.length; i++) {
         if (loadingData[i].key === `paragraph_${i + 1}`) {
@@ -40,6 +42,22 @@ const NatalLoading = () => {
         }
         if (loadingData[i].key === `paragraph_6`) {
             paragraph_6 =
+                language === 'FR'
+                    ? loadingData[i].FR
+                    : language === 'EN'
+                    ? loadingData[i].EN
+                    : loadingData[i].BR;
+        }
+        if (loadingData[i].key === `date`) {
+            date =
+                language === 'FR'
+                    ? loadingData[i].FR
+                    : language === 'EN'
+                    ? loadingData[i].EN
+                    : loadingData[i].BR;
+        }
+        if (loadingData[i].key === `close`) {
+            close =
                 language === 'FR'
                     ? loadingData[i].FR
                     : language === 'EN'
@@ -84,6 +102,16 @@ const NatalLoading = () => {
                 <div className={`textBox textBox--block  textBox--grayBack`}>
                     <h2 style={{ color: '#13323e', marginBottom: '1em' }}>{title}</h2>
                     {paragraph}
+                </div>
+                <div
+                    className={`textBox textBox--block  textBox--whiteBack textBox--whiteBack--border`}
+                >
+                    <p>
+                        {date} : <span className='textBox--spanText'> 22/12/2023</span>
+                    </p>
+                    <p>
+                        {close} : <span className='textBox--spanText'> 20/12/2023</span>
+                    </p>
                 </div>
                 <Link
                     to={link}
