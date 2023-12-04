@@ -38,9 +38,7 @@ const HomePhotos = (props) => {
             >
                 <h2
                     className={
-                        props.color === 'gray'
-                            ? 'homePhotos--white hidden'
-                            : 'homePhotos--white hidden'
+                        props.color === 'gray' ? 'homePhotos--white hidden' : 'homePhotos--white'
                     }
                 >
                     {props.title}

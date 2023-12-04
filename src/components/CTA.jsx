@@ -9,13 +9,15 @@ const CTA = () => {
     const yearsSize = years.length;
     const { language } = useContext(LngContext);
     const data = contentData.find((data) => data.title === language);
-    const subtitles = data.subtitles ? data.subtitles : null;
+    const subtitles = data?.subtitles;
     return (
         <div className='cta'>
             <div className='homeContent__actions '>
-                <Link to={`/2023`}>
-                    <button className='buttonNow'>{subtitles.action}</button>
-                </Link>
+                {subtitles && (
+                    <Link to={`/2023`}>
+                        <button className='buttonNow'>{subtitles?.action}</button>
+                    </Link>
+                )}
             </div>
         </div>
     );
