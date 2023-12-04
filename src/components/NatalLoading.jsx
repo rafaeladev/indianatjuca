@@ -12,7 +12,7 @@ export async function loader() {
 const NatalLoading = () => {
     const { language } = useContext(LngContext);
     const loadingData = useLoaderData();
-    console.log(loadingData);
+
     let paragraph = [];
     let subtitle = '';
     let paragraph_6 = '';

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useContext, useRef, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-
 import Banner from '../components/Banner.jsx';
 
 import hommebanner from '/Group1.png';
@@ -10,17 +9,16 @@ import contentData from '../data/home.json';
 import homePhotoCardData from '../data/archives.json';
 
 import { LngContext } from '../utils/context.jsx';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import HomePhotos from '../components/HomePhotos.jsx';
-
-import Loader from 'react-loaders';
 
 const Home = () => {
     const { language } = useContext(LngContext);
     const years = [2018, 2019, 2022, 2023];
     const yearsSize = years.length;
     const nameArray = ['I', 'n', 'd', 'i', 'a', 'n', 'a', '', 'T', 'i', 'j', 'u', 'c', 'a'];
-
+    // const data = useLoaderData();
+    // console.log(data);
     const data = contentData?.find((data) => data.title === language);
     const h2 = data?.h2;
 

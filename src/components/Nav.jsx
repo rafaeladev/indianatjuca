@@ -52,7 +52,7 @@ const Nav = () => {
                 </li>
                 <li className='nav__link__arch'>
                     <NavLink
-                        to='/archives'
+                        to='/natal'
                         className={({ isActive }) =>
                             isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
                         }

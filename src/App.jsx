@@ -32,6 +32,7 @@ const App = () => {
                     <Route
                         index
                         element={<Home />}
+                        // loader={homePageLoader}
                     />
                     <Route
                         path='natal'
