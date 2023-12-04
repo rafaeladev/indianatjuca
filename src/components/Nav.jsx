@@ -52,7 +52,7 @@ const Nav = () => {
                 </li>
                 <li className='nav__link__arch'>
                     <NavLink
-                        to='/2023'
+                        to='/archives'
                         className={({ isActive }) =>
                             isActive ? 'nav__link__item nav__link__active' : 'nav__link__item'
                         }
@@ -61,7 +61,7 @@ const Nav = () => {
                             ? 'Arquivos'
                             : language === 'FR'
                             ? 'Archives'
-                            : 'Arquives'}
+                            : 'Archives'}
                     </NavLink>
                 </li>
                 <li>
