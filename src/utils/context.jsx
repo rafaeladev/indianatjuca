@@ -17,7 +17,7 @@ export const LngProvider = ({ children }) => {
     const navLanguage = window.navigator.language;
     let result = 'EN';
     if (navLanguage) {
-        let result = navLanguage.substr(3);
+        result = navLanguage.substr(3);
     }
     const [language, setLanguage] = useState(result);
     function selectLanguage(event) {
