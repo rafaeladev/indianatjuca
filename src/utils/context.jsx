@@ -15,10 +15,7 @@ export const LngContext = createContext();
 
 export const LngProvider = ({ children }) => {
     const navLanguage = window.navigator.language;
-    let result = 'EN';
-    if (navLanguage) {
-        result = navLanguage.substr(3);
-    }
+    let result = navLanguage.slice(0, 2).toUpperCase();
     const [language, setLanguage] = useState(result);
     function selectLanguage(event) {
         setLanguage(event.target.value);
