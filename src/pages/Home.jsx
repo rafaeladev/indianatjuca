@@ -28,17 +28,14 @@ const Home = () => {
         const lang = language;
 
         // Simuler un chargement asynchrone
-        const simulateAsyncLoad = async () => {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            setLoading(false);
-            setData(contentData?.find((data) => data.title === lang));
-        };
+        // const simulateAsyncLoad = async () => {
+        //     await new Promise((resolve) => setTimeout(resolve, 1000));
+        //     setLoading(false);
+        setData(contentData?.find((data) => data.title === lang));
+        // };
 
-        simulateAsyncLoad();
+        // simulateAsyncLoad();
     }, [language]); // Recharger les données lorsque la langue change
-
-    console.log('Loading:', loading);
-    console.log('Data:', data);
 
     const h2 = data?.h2;
 
@@ -103,10 +100,10 @@ const Home = () => {
         }
         return;
     });
-    if (loading) {
-        // Affiche un message de chargement pendant que les données sont récupérées
-        return <p>Loading...</p>;
-    }
+    // if (loading) {
+    //     // Affiche un message de chargement pendant que les données sont récupérées
+    //     return <p>Loading...</p>;
+    // }
 
     if (!data) {
         // Si les données ne sont toujours pas disponibles après le chargement, affiche un message d'erreur
