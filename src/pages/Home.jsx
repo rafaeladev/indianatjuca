@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useContext, useRef, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import Banner from '../components/Banner.jsx';
 
@@ -14,12 +14,32 @@ import HomePhotos from '../components/HomePhotos.jsx';
 
 const Home = () => {
     const { language } = useContext(LngContext);
+    console.log(language);
     const years = [2018, 2019, 2022, 2023];
     const yearsSize = years.length;
     const nameArray = ['I', 'n', 'd', 'i', 'a', 'n', 'a', '', 'T', 'i', 'j', 'u', 'c', 'a'];
-    // const data = useLoaderData();
-    // console.log(data);
-    const data = contentData?.find((data) => data.title === language);
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState(null);
+
+    // const data = contentData?.find((data) => data.title === language);
+
+    useEffect(() => {
+        // Utiliser useContext à l'intérieur de useEffect
+        const lang = language;
+
+        // Simuler un chargement asynchrone
+        const simulateAsyncLoad = async () => {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            setLoading(false);
+            setData(contentData?.find((data) => data.title === lang));
+        };
+
+        simulateAsyncLoad();
+    }, [language]); // Recharger les données lorsque la langue change
+
+    console.log('Loading:', loading);
+    console.log('Data:', data);
+
     const h2 = data?.h2;
 
     const content = data?.content;
@@ -83,6 +103,15 @@ const Home = () => {
         }
         return;
     });
+    if (loading) {
+        // Affiche un message de chargement pendant que les données sont récupérées
+        return <p>Loading...</p>;
+    }
+
+    if (!data) {
+        // Si les données ne sont toujours pas disponibles après le chargement, affiche un message d'erreur
+        return <p>Error loading data</p>;
+    }
 
     return (
         <>

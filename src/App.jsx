@@ -34,6 +34,7 @@ const App = () => {
                         element={<Home />}
                         // loader={homePageLoader}
                     />
+
                     <Route
                         path='natal'
                         element={<Natal />}
